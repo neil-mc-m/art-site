@@ -12,23 +12,23 @@
             @import '{{ asset('/css/components/sticky.min.css') }}';
         {% endblock %}
     </style>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="{{ asset('/js/uikit.min.js') }}"></script>
     <script src="{{ asset('js/components/sticky.min.js') }}"></script>
 </head>
 <body class="uk-height-1-1">
 
-{# the header #}
-<header class="uk-container">
-    <h1>Dave Gearty</h1>
-</header>
-
 {# the navbar #}
-<nav class="uk-navbar uk-flex uk-flex-center uk-flex-space-around" data-uk-sticky>
-    <ul class="uk-navbar-nav uk-hidden-small">
-        <li><a href="/">Home</a></li>
+
+<nav class="uk-container uk-container-center uk-width-large-1-1 uk-flex uk-flex-center" data-uk-sticky>
+    <a href="#" class="uk-navbar-brand">Dave Gearty</a>
+    <ul class="uk-navbar-nav  uk-hidden-small uk-float-right">
+
+        <li class="uk-active"><a href="/">Home</a></li>
         <li><a href="/art">Art</a></li>
-        <li><a href="#">For Sale</a></li>
+        <li><a href="#">Exhibitions</a></li>
+        <li><a href="#">Shop</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
     <a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
@@ -43,8 +43,17 @@
         </ul>
     </div>
 </div>
+
 <div class="container">
-    <div class="section section-left uk-height-viewport">
+    <div class="section section-left">
+        <article class="uk-article">
+
+            <p class="uk-article-meta">Sligo based modern artist</p>
+            <p class="uk-article-meta">Regular exhibitor in galleries</p>
+            <img src="/images/business_as_usual.jpg" alt="picture of guards">
+            <p class="uk-article-meta">Contemporary subject matter</p>
+
+        </article>
 
     </div>
     <div class="section section-right uk-height-viewport">

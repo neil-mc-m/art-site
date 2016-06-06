@@ -1,8 +1,13 @@
+html {
+    font-size: medium;
+    font-family: 'Lato', sans-serif;
+}
 
+nav {
+    padding: 3%;
 
-.uk-container {
-    max-width: 100%;
-    padding: 0;
+    background-color: #566573;
+    opacity: 4;
 }
 
 h1 {
@@ -14,10 +19,11 @@ h1 {
     background: #273746;
 }
 .container {
-    padding: 3%;
+
     display: flex;
 }
 .section-left {
+
     background-color: #FDFEFE;
     border-right: thin solid #D5DBDB;
 }
@@ -30,9 +36,35 @@ h1 {
     flex: 1 0 0;
 }
 .uk-article {
+    margin-left: 10%;
     padding: 2%;
+}
+.uk-block-large {
+    margin: 2%;
 }
 footer{
     color: #404040;
 }
+.uk-container {
+    min-width: 100%;
+    padding: 1%;
+}
+.uk-navbar-brand {
+    padding-right: 5%;
+}
+
+@media (max-width: 600px){
+    .container {
+        padding: 0;
+        flex-direction: column;
+    }
+    .section {
+        justify-content: center;
+    }
+    .uk-article {
+        margin: auto;
+        padding: 2%;
+    }
+}
+
 

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="uk-thumbnail uk-thumbnail-small">
+        <img src="/images/business_as_usual.jpg" alt="picture of guards">
+        <div class="uk-thumbnail-caption"><a href="#lightbox" data-uk-modal>business as usual</a></div>
+    </div>
+
+    <div id="lightbox" class="uk-modal">
+        <div class="uk-modal-dialog">
+            <a href="" class="uk-modal-close uk-close uk-close-alt"></a>
+            <img src="/images/business_as_usual.jpg" alt="picture of guards">
+        </div>
+    </div>
+{% endblock %}

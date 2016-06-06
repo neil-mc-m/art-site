@@ -15,8 +15,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 ));
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.named_packages' => array(
-        'css' => array('version' => 'css2', 'base_path' => '/css'))
+        'css' => array('version' => 'css2', 'base_path' => '/css')),
+    'assets.named_packages' => array(
+        'js' => array('version' => 'uikitJS', 'base_path' => '/js')
+    )
 ));
 $app->get('/', 'Art\\Controllers\\MainController::indexAction');
+$app->get('/art', 'Art\\Controllers\\MainController::artAction');
 
 $app->run();

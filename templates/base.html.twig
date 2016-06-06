@@ -1,28 +1,61 @@
 <!DOCTYPE html>
+<html class="uk-height-1-1">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {% block title %}Php setup{% endblock %}
+        {% block title %}Dave Gearty | Artist{% endblock %}
     </title>
     <style>
         {% block style %}
+            @import '{{ asset('/css/uikit.min.css') }}';
             @import '{{ asset('/css/main.css') }}';
+            @import '{{ asset('/css/components/sticky.min.css') }}';
         {% endblock %}
     </style>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="{{ asset('/js/uikit.min.js') }}"></script>
+    <script src="{{ asset('js/components/sticky.min.js') }}"></script>
 </head>
-<body>
+<body class="uk-height-1-1">
 
 {# the header #}
-<header>
-    <h1>Php setup with silex and twig</h1>
+<header class="uk-container">
+    <h1>Dave Gearty</h1>
 </header>
-{# the navbar #}
-<nav>
 
+{# the navbar #}
+<nav class="uk-navbar uk-flex uk-flex-center uk-flex-space-around" data-uk-sticky>
+    <ul class="uk-navbar-nav uk-hidden-small">
+        <li><a href="/">Home</a></li>
+        <li><a href="/art">Art</a></li>
+        <li><a href="#">For Sale</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 </nav>
+
+<div id="my-id" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+            <li><a href="/">Home</a></li>
+            <li><a href="/art">Art</a></li>
+            <li><a href="#">For Sale</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="section section-left uk-height-viewport">
+
+    </div>
+    <div class="section section-right uk-height-viewport">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
 {# the footer #}
 <footer>
-
+    <p>Dg.com</p>
 </footer>
 {# javascript functions #}
 {% block javascript %}

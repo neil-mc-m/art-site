@@ -18,4 +18,12 @@ class MainController
 
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }
+    
+    public function artAction(Request $request, Application $app)
+    {
+        $templateName = 'art';
+        $args_array = array();
+        
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
 }

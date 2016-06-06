@@ -1,3 +1,38 @@
-h1 {
-    color: #dd4444;
+
+
+.uk-container {
+    max-width: 100%;
+    padding: 0;
 }
+
+h1 {
+    margin: 0;
+    background-color: #404040;
+    color: #6833FF;
+}
+.uk-close-alt {
+    background: #273746;
+}
+.container {
+    padding: 3%;
+    display: flex;
+}
+.section-left {
+    background-color: #FDFEFE;
+    border-right: thin solid #D5DBDB;
+}
+.section-right {
+    flex: 2 0 0;
+    color: #404040;
+    background-color: #FDFEFE;
+ }
+.section-left {
+    flex: 1 0 0;
+}
+.uk-article {
+    padding: 2%;
+}
+footer{
+    color: #404040;
+}
+

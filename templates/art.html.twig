@@ -1,14 +1,30 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    <div class="uk-thumbnail uk-thumbnail-small">
-        <img src="/images/business_as_usual.jpg" alt="picture of guards">
-        <div class="uk-thumbnail-caption"><a href="#lightbox" data-uk-modal>business as usual</a></div>
-    </div>
+<div class="uk-grid">
+    <div class="uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box">
 
-    <div id="lightbox" class="uk-modal">
-        <div class="uk-modal-dialog">
-            <a href="" class="uk-modal-close uk-close uk-close-alt"></a>
-            <img src="/images/business_as_usual.jpg" alt="picture of guards">
+        <a href="#my-panel" data-uk-offcanvas><img src="/images/business_as_usual.jpg" alt=""><div class="uk-thumbnail-caption">Business as Usual</div></a>
+    </div>
+        </div>
+
+    <div class="uk-width-medium-1-2">
+<div class="uk-panel uk-panel-box">
+    <img src="/images/business_as_usual.jpg" alt="">
+    <a href="#my-panel" data-uk-offcanvas>info</a>
+</div>
+        </div>
+</div>
+    <div id="my-panel" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-contrast">
+            <div class="uk-panel">
+                <h3 class="uk-panel-title">Busines as usual</h3>
+                <p>Business as usual. one of daves best pictures.. featuring the policemen from hell</p>
+            </div>
+
         </div>
     </div>
+
+
+
 {% endblock %}

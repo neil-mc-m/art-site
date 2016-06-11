@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    <div class="uk-block uk-block-large uk-block-primary">
-       <p>Great work from dave the other day</p>
+
+    <div class="slideshow uk-slidenav-position" data-uk-slideshow>
+        <ul class="uk-slideshow" data-uk-slideshow="{autoplay: true, animation: 'random-fx'}">
+            <li><img src="/images/business_as_usual.jpg" alt="guards picture"></li>
+            <li><img src="/images/cement-vines.jpg" alt="random pic"></li>
+        </ul>
     </div>
 
 {% endblock %}

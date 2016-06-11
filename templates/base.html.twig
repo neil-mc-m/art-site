@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="uk-height-1-1">
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
@@ -10,61 +10,80 @@
             @import '{{ asset('/css/uikit.min.css') }}';
             @import '{{ asset('/css/main.css') }}';
             @import '{{ asset('/css/components/sticky.min.css') }}';
+            @import '{{ asset('/css/components/slideshow.min.css') }}';
+            @import '{{ asset('/css/components/dotnav.min.css') }}';
+            @import '{{ asset('/css/components/slidenav.min.css') }}';
         {% endblock %}
     </style>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('/js/uikit.min.js') }}"></script>
     <script src="{{ asset('js/components/sticky.min.js') }}"></script>
+    <script src="{{ asset('js/components/slideshow.min.js') }}"></script>
+    <script src="{{ asset('js/components/slideshow-fx.js') }}"></script>
 </head>
 <body class="uk-height-1-1">
 
 {# the navbar #}
+<div class="heading uk-flex uk-flex-center">
+    <a href="/" class="uk-navbar-brand">Dave Gearty</a>
 
-<nav class="uk-container uk-container-center uk-width-large-1-1 uk-flex uk-flex-center" data-uk-sticky>
-    <a href="#" class="uk-navbar-brand">Dave Gearty</a>
-    <ul class="uk-navbar-nav  uk-hidden-small uk-float-right">
+</div>
+<div class="uk-flex uk-flex-center">
+    <p class="uk-text-small uk-text-muted">Artist</p>
+</div>
+<nav>
 
+    <div class="uk-container">
+        <a href="#my-id" class="uk-navbar-toggle uk-visible-small uk-flex uk-flex-center" data-uk-offcanvas></a>
+    <ul class="uk-container navbar uk-hidden-small">
         <li class="uk-active"><a href="/">Home</a></li>
         <li><a href="/art">Art</a></li>
         <li><a href="#">Exhibitions</a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="#">Contact</a></li>
-    </ul>
-    <a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
-</nav>
 
+    </ul>
+
+    </div>
+</nav>
+<hr>
 <div id="my-id" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
             <li><a href="/">Home</a></li>
             <li><a href="/art">Art</a></li>
-            <li><a href="#">For Sale</a></li>
+            <li><a href="#">Exhibitions</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
 </div>
 
-<div class="container">
-    <div class="section section-left">
-        <article class="uk-article">
 
-            <p class="uk-article-meta">Sligo based modern artist</p>
-            <p class="uk-article-meta">Regular exhibitor in galleries</p>
-            <img src="/images/business_as_usual.jpg" alt="picture of guards">
-            <p class="uk-article-meta">Contemporary subject matter</p>
+    {#<div class="section section-left">#}
+        {#<article class="uk-article">#}
 
-        </article>
+            {#<p class="uk-article-meta">Sligo based modern artist</p>#}
+            {#<p class="uk-article-meta">Regular exhibitor in galleries</p>#}
 
-    </div>
-    <div class="section section-right uk-height-viewport">
+            {#<p class="uk-article-meta">Contemporary subject matter</p>#}
+            {#<blockquote>#}
+                {#<p>One of the most important tools for an artist is their paintbrush</p>#}
+                {#<small>Da Vinci</small>#}
+            {#</blockquote>#}
+        {#</article>#}
+
+    {#</div>#}
+
         {% block content %}
         {% endblock %}
-    </div>
-</div>
 
 {# the footer #}
 <footer>
-    <p>Dg.com</p>
+    <i class="uk-icon-cog"></i>
+    <i class="uk-icon-flash"></i>
+    <p>&copy;2016 Dg.com</p>
 </footer>
 {# javascript functions #}
 {% block javascript %}

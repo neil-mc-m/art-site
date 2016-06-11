@@ -2,56 +2,60 @@ html {
     font-size: medium;
     font-family: 'Lato', sans-serif;
 }
-
-nav {
-    padding: 3%;
-
-    background-color: #566573;
-    opacity: 4;
+a {
+    color: #1a1a1a;
 }
 
-h1 {
-    margin: 0;
-    background-color: #404040;
-    color: #6833FF;
+footer{
+    padding: 1%;
+    color: #404040;
+    text-align: center;
+}
+.heading {
+    margin-top: 3%;
 }
 .uk-close-alt {
     background: #273746;
 }
-.container {
+.uk-navbar-brand {
+    font-size: xx-large;
+}
 
-    display: flex;
-}
-.section-left {
 
-    background-color: #FDFEFE;
-    border-right: thin solid #D5DBDB;
-}
-.section-right {
-    flex: 2 0 0;
-    color: #404040;
-    background-color: #FDFEFE;
- }
-.section-left {
-    flex: 1 0 0;
-}
-.uk-article {
-    margin-left: 10%;
-    padding: 2%;
-}
 .uk-block-large {
+
     margin: 2%;
 }
-footer{
-    color: #404040;
-}
+
 .uk-container {
     min-width: 100%;
-    padding: 1%;
+
 }
-.uk-navbar-brand {
-    padding-right: 5%;
+
+.uk-navbar-nav > li > a {
+    font-size: medium;
+    font-family: 'Lato', sans-serif;
 }
+
+.uk-slideshow {
+    max-width: 800px;
+    height: 400px;
+}
+.navbar {
+    display: flex;
+    flex: 1;
+    list-style-type: none;
+    justify-content: center;
+}
+.navbar li{
+    margin-right: 1%;
+}
+.slideshow {
+    max-width: 50%;
+    margin: auto;
+}
+
+
 
 @media (max-width: 600px){
     .container {
@@ -64,6 +68,20 @@ footer{
     .uk-article {
         margin: auto;
         padding: 2%;
+    }
+    .uk-navbar-toggle {
+        float: none;
+
+    }
+    .uk-offcanvas-bar {
+        max-width: 50%;
+    }
+    .uk-panel-box {
+        max-width: 100%;
+        margin: auto;
+    }
+    .slideshow {
+        max-width: 90%;
     }
 }
 

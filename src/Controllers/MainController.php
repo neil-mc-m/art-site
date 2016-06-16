@@ -13,8 +13,11 @@ class MainController
 {
     public function indexAction(Request $request, Application $app)
     {
+        $img = $app['db']->fetchAll('SELECT * FROM images');
         $templateName = 'home';
-        $args_array = array();
+        $args_array = array(
+            'images' => $img
+        );
 
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }

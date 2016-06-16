@@ -1,0 +1,23 @@
+{
+  "name": "dave-g",
+  "version": "1.0.0",
+  "description": "dependencies for developing front-end for daves website",
+  "main": "index.php",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "dave-g"
+  },
+  "keywords": [
+    "artist",
+    "dave"
+  ],
+  "author": "neil mcmahon",
+  "license": "isc",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0"
+  }
+}

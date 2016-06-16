@@ -3,8 +3,9 @@
 
     <div class="slideshow uk-slidenav-position" data-uk-slideshow>
         <ul class="uk-slideshow" data-uk-slideshow="{autoplay: true, animation: 'random-fx'}">
-            <li><img src="/images/business_as_usual.jpg" alt="guards picture"></li>
-            <li><img src="/images/cement-vines.jpg" alt="random pic"></li>
+            {% for image in images %}
+            <li><img src={{ image.path|raw }}></li>
+            {% endfor %}
         </ul>
     </div>
 

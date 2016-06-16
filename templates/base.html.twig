@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}Dave Gearty | Artist{% endblock %}
     </title>
-    <style>
-        {% block style %}
-            @import '{{ asset('/css/uikit.min.css') }}';
-            @import '{{ asset('/css/main.css') }}';
-            @import '{{ asset('/css/components/sticky.min.css') }}';
-            @import '{{ asset('/css/components/slideshow.min.css') }}';
-            @import '{{ asset('/css/components/dotnav.min.css') }}';
-            @import '{{ asset('/css/components/slidenav.min.css') }}';
-        {% endblock %}
-    </style>
+    {#<style>#}
+        {#{% block style %}#}
+            {#@import '{{ asset('/css/uikit.min.css') }}';#}
+            {#@import '{{ asset('/css/main.css') }}';#}
+            {#@import '{{ asset('/css/components/sticky.min.css') }}';#}
+            {#@import '{{ asset('/css/components/slideshow.min.css') }}';#}
+            {#@import '{{ asset('/css/components/dotnav.min.css') }}';#}
+            {#@import '{{ asset('/css/components/slidenav.min.css') }}';#}
+        {#{% endblock %}#}
+    {#/*</style>*/#}
+
+    <link rel="stylesheet" href="{{ asset('/css/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/components/sticky.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/components/slideshow.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/components/dotnav.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/components/slidenav.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('/js/uikit.min.js') }}"></script>

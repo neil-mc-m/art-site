@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-<div class="uk-grid">
-    <div class="uk-width-medium-1-2">
-    <div class="uk-panel uk-panel-box">
+<div class="uk-grid uk-grid-match">
+    <div class="uk-width-medium-1-4 uk-grid-width-small-1-1">
 
-        <a href="#my-panel" data-uk-offcanvas><img src="/images/business_as_usual.jpg" alt=""><div class="uk-thumbnail-caption">Business as Usual</div></a>
+        <div class="uk-panel uk-panel-box">
+            <a href="#my-panel" data-uk-offcanvas><img src="/images/business_as_usual.jpg" alt=""><div class="uk-thumbnail-caption">Business as Usual</div></a>
+        </div>
     </div>
+    <div class="uk-width-medium-1-4 uk-grid-width-small-1-1">
+        <div class="uk-panel uk-panel-box">
+            <a href="#my-panel" data-uk-offcanvas><img src="/images/house_party.jpg" alt="house party"><div class="uk-thumbnail-caption">House Party</div></a>
         </div>
-
-    <div class="uk-width-medium-1-2">
-<div class="uk-panel uk-panel-box">
-    <img src="/images/business_as_usual.jpg" alt="">
-    <a href="#my-panel" data-uk-offcanvas>info</a>
+    </div>
 </div>
-        </div>
-</div>
+    {# sliding panel from the right with information on the painting #}
     <div id="my-panel" class="uk-offcanvas">
         <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-contrast">
             <div class="uk-panel">

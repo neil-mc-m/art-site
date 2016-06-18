@@ -24,8 +24,11 @@ class MainController
     
     public function artAction(Request $request, Application $app)
     {
+        $img = $app['db']->fetchAll('SELECT * FROM images');
         $templateName = 'art';
-        $args_array = array();
+        $args_array = array(
+            'images' => $img
+        );
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }

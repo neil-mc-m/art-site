@@ -1,28 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block content %}
 <div class="uk-grid uk-grid-match">
-    <div class="uk-width-medium-1-4 uk-grid-width-small-1-1">
-
-        <div class="uk-panel uk-panel-box">
-            <a href="#my-panel" data-uk-offcanvas><img src="/images/business_as_usual.jpg" alt=""><div class="uk-thumbnail-caption">Business as Usual</div></a>
-        </div>
-    </div>
+    {% for image in images %}
     <div class="uk-width-medium-1-4 uk-grid-width-small-1-1">
         <div class="uk-panel uk-panel-box">
-            <a href="#my-panel" data-uk-offcanvas><img src="/images/house_party.jpg" alt="house party"><div class="uk-thumbnail-caption">House Party</div></a>
+            <a href="#my-panel" data-uk-offcanvas><img src={{ image.path|raw }} alt=""><div class="uk-thumbnail-caption">{{ image.name }}</div></a>
         </div>
     </div>
+    {% endfor %}
 </div>
     {# sliding panel from the right with information on the painting #}
     <div id="my-panel" class="uk-offcanvas">
         <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-contrast">
             <div class="uk-panel">
-                <h3 class="uk-panel-title">Busines as usual</h3>
+                <h3 class="uk-panel-title">{{ loop.index }}{{ image.name }}</h3>
                 <p>Business as usual. one of daves best pictures.. featuring the policemen from hell</p>
             </div>
-
         </div>
     </div>
+
 
 
 

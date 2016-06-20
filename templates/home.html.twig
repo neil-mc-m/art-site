@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
+{% set active_page = 'home' %}
+{% block nav %}
+    {% include 'partials/navbar.html.twig' %}
+{% endblock %}
+
 {% block content %}
 
     <div class="slideshow uk-slidenav-position">
         <ul class="uk-slideshow" data-uk-slideshow="{autoplay: true, animation: 'random-fx', height: '450'}">
             {% for image in images %}
-            <li><img src={{ image.path|raw }}></li>
+                <li><img src={{ image.path|raw }}></li>
             {% endfor %}
         </ul>
     </div>

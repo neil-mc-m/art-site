@@ -34,6 +34,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $app->get('/', 'Art\\Controllers\\MainController::indexAction');
+$app->get('/home', 'Art\\Controllers\\MainController::indexAction');
 $app->get('/art', 'Art\\Controllers\\MainController::artAction');
 
 $app->run();

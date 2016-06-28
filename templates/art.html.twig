@@ -6,25 +6,38 @@
 
 {% block content %}
 
-
-
-        <div class="uk-margin uk-margin-left uk-margin-right" data-uk-slideset="{small: 2, large: 6}">
-            <ul class="uk-slideset uk-grid uk-grid-match uk-flex">
-                {% for image in images %}
-                <li><a href="#my-panel" data-uk-offcanvas><img src={{ image.path|raw }}><div class="uk-thumbnail-caption">{{ image.name }}</div></a></li>
-                {% endfor %}
+        <div class="uk-margin uk-margin-left uk-margin-right" data-uk-slideset="{small: 2, large: 4}">
+            <ul class="uk-subnav uk-subnav-pill">
+                <li data-uk-filter=""><a>All</a></li>
+                <li data-uk-filter="filter-a"><a>Collage</a></li>
+                <li data-uk-filter="filter-b"><a>Oil on canvas</a></li>
             </ul>
+            <div class="uk-slidenav-position">
+                <ul class="uk-slideset uk-grid uk-grid-match uk-flex">
+
+                    {% for image in images %}
+                        <li data-uk-filter="filter-{{ image.filter }}"><a href="#my-panel" data-uk-offcanvas><img src={{ image.path|raw }}><div class="uk-thumbnail-caption">{{ image.name|capitalize }}<br>{{ image.description }}<br>{{ image.medium|capitalize }}<br></div></a></li>
+                    {% endfor %}
+                </ul>
+                    <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>
+                    <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideset-item="next"></a>
+            </div>
         </div>
 
         {# sliding panel from the right with information on the painting #}
-        <div id="my-panel" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-contrast">
-                <div class="uk-panel">
-                    <h3 class="uk-panel-title"></h3>
-                    <p>Business as usual. one of daves best pictures.. featuring the policemen from hell</p>
-                </div>
+
+    <div id="my-panel" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-contrast">
+            <div class="uk-panel">
+
+                <h3 class="uk-panel-title"></h3>
+
+                <p></p>
+
+
             </div>
         </div>
+    </div>
 
 
 

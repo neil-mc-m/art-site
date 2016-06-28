@@ -5,7 +5,9 @@ html {
 a {
     color: #1a1a1a;
 }
-
+img {
+    height: 300px;
+}
 footer{
     padding: 1%;
     color: #404040;
@@ -42,9 +44,15 @@ a:hover {
 li.active {
     border-bottom: thin solid orangered;
 }
-.uk-slideshow {
-    max-width: 100%;
-    height: 400px;
+
+.uk-slidenav {
+    color: orangered;
+}
+.uk-slidenav:hover {
+    color: orangered;
+}
+.uk-margin {
+    background-color: rgba(156, 148, 140, 0.08);
 }
 .navbar {
     display: flex;
@@ -61,36 +69,28 @@ li.active {
     float: none;
 
 }
+
 .uk-offcanvas-bar {
     max-width: 50%;
 }
-/*.uk-panel-box {*/
-    /*min-width: 100%;*/
-    /*margin: auto;*/
-/*}*/
-.slideshow {
-    max-width: 90%;
-    margin: auto;
-
+.home-image {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.uk-thumbnail {
+    height: 300px;
 }
 
-@media (min-width: 600px){
-    .slideshow {
-        max-width: 80%;
-    }
-}
-@media (min-width: 800px){
-    .slideshow {
-        max-width: 65%;
-    }
-}
-@media (min-width: 1000px){
 
-    .slideshow {
-        max-width: 50%;
-        margin: auto;
+@media (min-width: 600px) {
+    img {
+        height: 400px;
     }
+    .uk-thumbnail {
 
+        height: 500px;
+
+    }
 }
 
 

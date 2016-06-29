@@ -37,5 +37,6 @@ $app->get('/', 'Art\\Controllers\\MainController::indexAction');
 $app->get('/home', 'Art\\Controllers\\MainController::indexAction');
 $app->get('/art', 'Art\\Controllers\\MainController::artAction');
 $app->get('/exhibitions', 'Art\\Controllers\\MainController::exhibitionAction');
+$app->get('/exhibitions-solo', 'Art\\Controllers\\MainController::soloExhibitionAction');
 
 $app->run();

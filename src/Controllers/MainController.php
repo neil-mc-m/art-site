@@ -6,6 +6,7 @@
  * Time: 00:35
  */
 namespace Art\Controllers;
+use Art\dbrepo;
 use \PDO;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,10 +23,8 @@ class MainController
     
     public function artAction(Request $request, Application $app)
     {
-        $stmt = $app['db']->prepare('SELECT * FROM image');
-
-        $stmt->execute();
-        $img = $stmt->fetchAll(PDO::FETCH_CLASS, '\\Art\\Image');
+        $db = new dbrepo($app['db']);
+        $img = $db->getAllImages();
         
         $templateName = 'art';
         $args_array = array(
@@ -37,12 +36,22 @@ class MainController
     
     public function exhibitionAction(Request $request, Application $app)
     {
-        $stmt = $app['db']->prepare('SELECT * FROM exhibition');
-        $stmt->execute();
-        $img = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = new dbrepo($app['db']);
+        $exhib = $db->getAllExhibitions();
         $templateName = 'exhibition';
         $args_array = array(
-            'images' => $img
+            'exhibitions' => $exhib
+        );
+        
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
+    public function soloExhibitionAction(Request $request, Application $app)
+    {
+        $db = new dbrepo($app['db']);
+        $solo = $db->getAllSolo();
+        $templateName = 'solo';
+        $args_array = array(
+            'solo' => $solo
         );
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);

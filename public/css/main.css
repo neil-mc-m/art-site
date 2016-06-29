@@ -29,10 +29,12 @@ footer{
 }
 
 .uk-container {
-    min-width: 100%;
+    max-width: 100%;
 
 }
-
+.uk-grid-divider {
+    padding: 0;
+}
 .uk-navbar-nav > li > a {
     font-size: medium;
     font-family: 'Lato', sans-serif;

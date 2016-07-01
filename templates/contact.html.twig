@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% set active_page = 'contact' %}
+{% block nav %}
+    {% include 'partials/navbar.html.twig' %}
+{% endblock %}
+{% block content %}
+    <form class="uk-form" action="#" method="post">
+        {{ form_widget(form) }}
+        <input type="submit" name="submit"/>
+    </form>
+{% endblock %}

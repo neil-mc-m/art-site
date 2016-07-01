@@ -6,10 +6,12 @@
  * Time: 00:35
  */
 namespace Art\Controllers;
+
 use Art\dbrepo;
 use \PDO;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 
 class MainController
 {
@@ -54,6 +56,26 @@ class MainController
             'solo' => $solo
         );
         
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
+    public function contactFormAction(Request $request, Application $app)
+    {
+        $data = array(
+            'name' => 'your name',
+            'email' => 'your email'
+        );
+        $form = $app['form.factory']->createBuilder(FormType::class, $data)
+            ->add('name')
+            ->add('email')
+            ->getForm();
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $data = $form->getData();
+        }
+        $templateName = 'contact';
+        $args_array = array(
+            'form' =>$form->createView()
+        );
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }
 }

@@ -14,6 +14,7 @@ footer{
     text-align: center;
 }
 .heading {
+    font-family: 'Didact Gothic', sans-serif;
     margin-top: 3%;
 }
 .uk-close-alt {
@@ -22,7 +23,9 @@ footer{
 .uk-navbar-brand {
     font-size: xx-large;
 }
-
+.art {
+    color: orangered;
+}
 .uk-block-large {
 
     margin: 2%;
@@ -83,7 +86,19 @@ li.active {
     height: 300px;
 }
 
+.form-control {
+    padding: 5%;
+}
+textarea {
+    height: 20%;
+}
+input[type=submit] {
+    /* change these properties to whatever you want */
+    background-color: #555;
+    color: #fff;
+    border-radius: 10px;
 
+}
 @media (min-width: 600px) {
     img {
         height: 400px;

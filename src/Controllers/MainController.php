@@ -10,8 +10,15 @@ namespace Art\Controllers;
 use Art\dbrepo;
 use \PDO;
 use Silex\Application;
-use Symfony\Component\HttpFoundation\Request;
+use Silex\Provider\FormServiceProvider;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\Type;
+
+use Symfony\Component\Validator\Constraints as Assert;
 
 class MainController
 {
@@ -61,12 +68,38 @@ class MainController
     public function contactFormAction(Request $request, Application $app)
     {
         $data = array(
-            'name' => 'your name',
-            'email' => 'your email'
+            'name' => '',
+            'email' => '',
+            'message' => ''
         );
         $form = $app['form.factory']->createBuilder(FormType::class, $data)
-            ->add('name')
-            ->add('email')
+            ->add('name', TextType::class, array(
+                'constraints' => array(
+                    new Assert\NotBlank(),
+                    new Assert\Length(array(
+                        'min' => 3
+                    ))),
+                'attr' => array(
+                    'class' => 'uk-form-width-large',
+                    'placeholder' => 'Name'
+                )))
+            ->add('email', EmailType::class, array(
+                'constraints' => new Assert\Email(),
+                'attr' => array(
+                    'class' => 'uk-form-width-large',
+                    'placeholder' => 'Yourname@somethingmail.com'
+                )))
+            ->add('message', TextareaType::class, array(
+                'constraints' => array(
+                    new Assert\NotBlank(), new Assert\Length(array(
+                        'min' => 20
+                    ))),
+                'attr' => array(
+                    'class' => 'uk-form-width-large',
+                    'placeholder' => 'Your Message',
+                    'rows' => 20
+                )
+            ))
             ->getForm();
         $form->handleRequest($request);
         if ($form->isValid()) {
@@ -74,7 +107,7 @@ class MainController
         }
         $templateName = 'contact';
         $args_array = array(
-            'form' =>$form->createView()
+            'form' => $form->createView()
         );
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }

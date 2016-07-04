@@ -32,12 +32,13 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'port'     => '3306'
     ),
 ));
+
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\LocaleServiceProvider());
+$app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'translator.domains' => array(),
 ));
-$app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
 return $app;

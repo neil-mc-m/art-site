@@ -97,7 +97,7 @@ class MainController
                 'attr' => array(
                     'class' => 'uk-form-width-large',
                     'placeholder' => 'Your Message',
-                    'rows' => 20
+                    'rows' => 15
                 )
             ))
             ->getForm();

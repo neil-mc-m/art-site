@@ -1,21 +1,20 @@
 {# the navbar #}
 {% set navbar = [['home', 'Home'], ['art', 'Art'], ['exhibitions', 'Exhibitions'], ['contact', 'Contact']] %}
-<div class="heading uk-flex uk-flex-center">
-    <a href="/" class="uk-navbar-brand">Dave Ge<span class="uk-animation-fade uk-text-bold art">art</span>y</a>
-</div>
-<div class="uk-flex uk-flex-center">
-    <p class="uk-text-small uk-text-muted">Artist</p>
-</div>
+
 <nav>
     <div class="uk-container">
         <a href="#my-id" class="uk-navbar-toggle uk-visible-small uk-flex uk-flex-center" data-uk-offcanvas></a>
         <ul class="uk-container navbar uk-hidden-small">
+
             {% for item in navbar %}
                 <li{% if item[0] == active_page %} class="active uk-animation-hover"{% endif %} class="uk-animation-hover uk-animation-fade"><a
                             href="{{ global.request.basepath }}/{{ (item[0]) }}" class="">{{ item[1] }}</a></li>
             {% endfor %}
+
         </ul>
+
     </div>
+
 </nav>
 <hr>
 <div id="my-id" class="uk-offcanvas">

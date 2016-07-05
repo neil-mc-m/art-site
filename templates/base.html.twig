@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('/css/components/dotnav.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/components/slidenav.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/animate.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
@@ -23,6 +24,12 @@
     <script src="{{ asset('js/components/slideset.min.js') }}"></script>
 </head>
 <body>
+<div class="heading uk-flex uk-flex-center">
+    <a href="/" class="uk-navbar-brand">Dave Ge<span class="animated infinite bounce art">art</span>y</a>
+</div>
+<div class="uk-flex uk-flex-center">
+    <p class="uk-text-small uk-text-muted">Artist</p>
+</div>
 {% block nav %}
 {% endblock %}
 
@@ -35,6 +42,9 @@
     <i class="uk-icon-cog"></i>
     <i class="uk-icon-flash"></i>
     <p>&copy;2016 Dg.com</p>
+    <form class="uk-search" data-uk-search="{flipDropdown:true, source:'../tests/components/_searchautocomplete.json'}">
+        <input class="uk-search-field" type="search" placeholder="search...">
+    </form>
 </footer>
 {# javascript functions #}
 {% block javascript %}

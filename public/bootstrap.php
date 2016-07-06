@@ -21,19 +21,18 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
         'images' => array('version' => 'original', 'base_path' => '/images')
     )
 ));
+$config = parse_ini_file('../config/config.ini');
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => array(
-        'driver'   => 'pdo_mysql',
-        'dbname'   => 'daveg',
-        'host'     => 'localhost',
-        'user'     => 'neil',
-        'password' => 'neil',
-        'charset'  => 'utf8mb4',
-        'port'     => '3306'
-    ),
+    'db.options' => $config
 ));
 
 $app->register(new Silex\Provider\FormServiceProvider());
+
+$app->extend('form.types', function ($types) use ($app) {
+    $types[] = new \Art\ContactType();
+
+    return $types;
+});
 $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(

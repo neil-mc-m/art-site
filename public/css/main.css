@@ -98,12 +98,7 @@ input[type=submit] {
     color: #2c2c2c;
 
 }
-input[type=search] {
-    /* change these properties to whatever you want */
-    background-color: inherit;
-    color: #2c2c2c;
 
-}
 @media (min-width: 600px) {
     img {
         height: 400px;

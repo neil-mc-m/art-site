@@ -788,9 +788,8 @@
 //  https://raw.github.com/madrobby/zepto/master/src/touch.js
 //  Zepto.js may be freely distributed under the MIT license.
 
-;(function($){
-
-  if ($.fn.swipeLeft) {
+(function ($) {
+    if ($.fn.swipeLeft) {
     return;
   }
 

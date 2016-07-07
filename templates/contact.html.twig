@@ -12,9 +12,13 @@
     <div class="uk-margin uk-width-1-1 uk-text-center">
         <h1 class="uk-h2 uk-text-bold">{{ 'contact'|upper }}</h1>
     </div>
+{% if sent == true %}
+    <p>Thanks for getting in touch! I'll get back to you as soon as i can.</p>
+    {% else %}
+        <p>Fill in your details and your message and ill get back to you as soon as possible.</p>
 
     <div class="uk-flex uk-flex-center">
-        <form class="uk-form" action="#" method="post">
+        <form class="uk-form" action="/contact" method="post">
             {{ form_start(form) }}
             {{ form_errors(form) }}
 
@@ -48,4 +52,5 @@
         {{ form_end(form) }}
         </form>
     </div>
+{% endif %}
 {% endblock %}

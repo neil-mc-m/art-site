@@ -96,6 +96,7 @@ class MainController
      */
     public function contactFormAction(Request $request, Application $app)
     {
+        $sent = false;
         $data = array(
             'name' => '',
             'email' => '',
@@ -107,10 +108,21 @@ class MainController
         $form->handleRequest($request);
         if ($form->isValid()) {
             $data = $form->getData();
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Dave Gearty Contact form')
+                ->setFrom(array($data['email'] => $data['name']))
+                //->setTo(array('feedback@lilyandlarryllamafarmers.com'))
+                ->setTo(array('neilo2000@gmail.com'))
+                ->setBody($data['message']);
+
+            $app['mailer']->send($message);
+
+            $sent = true;
         }
         $templateName = 'contact';
         $args_array = array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'sent' => $sent
         );
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }

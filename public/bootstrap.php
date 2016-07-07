@@ -39,5 +39,13 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'translator.domains' => array(),
 ));
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
+$app['swiftmailer.options'] = array(
+    'host' => 'smtp.gmail.com',
+    'port' => 465,
+    'username' => 'neilmcmahon40@gmail.com',
+    'password' => 'Barra2016',
+    'encryption' => 'ssl',
+    'auth_mode' => 'login'
+);
 
 return $app;

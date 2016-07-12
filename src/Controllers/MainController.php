@@ -10,12 +10,9 @@ namespace Art\Controllers;
 use Art\Contact;
 use Art\ContactType;
 use Art\dbrepo;
-use \PDO;
 use Silex\Application;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\Type;
-
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -89,6 +86,22 @@ class MainController
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }
 
+    /**
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    public function groupExhibitionAction(Request $request, Application $app)
+    {
+        $db = new dbrepo($app['db']);
+        $group  = $db->getAllGroup();
+        $templateName = 'group';
+        $args_array = array(
+            'group' => $group
+        );
+        
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
     /**
      * @param Request $request
      * @param Application $app

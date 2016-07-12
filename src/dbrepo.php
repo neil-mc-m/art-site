@@ -64,4 +64,12 @@ class dbrepo
         
         return $solo;
     }
+    public function getAllGroup()
+    {
+        $stmt = $this->conn->prepare('SELECT * FROM exhibition WHERE type="group"');
+        $stmt->execute();
+        $group = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        return $group;
+    }
 }

@@ -5,13 +5,13 @@
  * Date: 01/07/2016
  * Time: 23:46
  */
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $app = new Silex\Application();
 // turn on for developing
 $app['debug'] = true;
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../templates'
+    'twig.path' => __DIR__ . '/../templates'
 ));
 
 $app->register(new Silex\Provider\AssetServiceProvider(), array(

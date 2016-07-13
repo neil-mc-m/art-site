@@ -13,7 +13,6 @@ $app['debug'] = true;
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/../templates'
 ));
-
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.named_packages' => array(
         'js'     => array('version' => 'uikitJS', 'base_path' => '/js'),
@@ -25,9 +24,8 @@ $config = parse_ini_file('../config/config.ini');
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => $config
 ));
-
+$app->register(new \Art\DbRepoServiceProvider());
 $app->register(new Silex\Provider\FormServiceProvider());
-
 $app->extend('form.types', function ($types) use ($app) {
     $types[] = new \Art\ContactType();
 

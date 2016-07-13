@@ -151,8 +151,4 @@ class Image
     {
         $this->description = $description;
     }
-
-
-
-
 }

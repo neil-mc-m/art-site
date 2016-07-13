@@ -7,12 +7,9 @@
  */
 namespace Art\Controllers;
 
-use Art\Contact;
 use Art\ContactType;
-use Art\dbrepo;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\Type;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -22,11 +19,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 class MainController
 {
     /**
-     * @param Request $request
+     * 
      * @param Application $app
      * @return mixed
      */
-    public function indexAction(Request $request, Application $app)
+    public function indexAction(Application $app)
     {
         $templateName = 'home';
         $args_array = array();
@@ -35,15 +32,13 @@ class MainController
     }
 
     /**
-     * @param Request $request
+     * 
      * @param Application $app
      * @return mixed
      */
-    public function artAction(Request $request, Application $app)
+    public function artAction(Application $app)
     {
-        $db = new dbrepo($app['db']);
-        $img = $db->getAllImages();
-        
+        $img = $app['dbrepo']->getAllImages();
         $templateName = 'art';
         $args_array = array(
             'images' => $img
@@ -53,14 +48,13 @@ class MainController
     }
 
     /**
-     * @param Request $request
+     * 
      * @param Application $app
      * @return mixed
      */
-    public function exhibitionAction(Request $request, Application $app)
+    public function exhibitionAction(Application $app)
     {
-        $db = new dbrepo($app['db']);
-        $exhib = $db->getAllExhibitions();
+        $exhib = $app['dbrepo']->getAllExhibitions();
         $templateName = 'exhibition';
         $args_array = array(
             'exhibitions' => $exhib
@@ -70,14 +64,13 @@ class MainController
     }
 
     /**
-     * @param Request $request
+     * 
      * @param Application $app
      * @return mixed
      */
-    public function soloExhibitionAction(Request $request, Application $app)
+    public function soloExhibitionAction(Application $app)
     {
-        $db = new dbrepo($app['db']);
-        $solo = $db->getAllSolo();
+        $solo = $app['dbrepo']->getAllSolo();
         $templateName = 'solo';
         $args_array = array(
             'solo' => $solo
@@ -87,14 +80,13 @@ class MainController
     }
 
     /**
-     * @param Request $request
+     * 
      * @param Application $app
      * @return mixed
      */
-    public function groupExhibitionAction(Request $request, Application $app)
+    public function groupExhibitionAction(Application $app)
     {
-        $db = new dbrepo($app['db']);
-        $group  = $db->getAllGroup();
+        $group  = $app['dbrepo']->getAllGroup();
         $templateName = 'group';
         $args_array = array(
             'group' => $group

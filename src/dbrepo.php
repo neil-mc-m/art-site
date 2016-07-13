@@ -8,17 +8,15 @@
 
 namespace Art;
 
-
-use Doctrine\DBAL\Driver\PDOSqlsrv\Connection;
 use \PDO;
-
+use Doctrine\DBAL\Connection;
 /**
- * Class dbrepo
+ * Class DbRepo
  * @package Art
  * 
  * database repository for manipulating data
  */
-class dbrepo
+class DbRepo
 {
     /**
      * @var \Doctrine\DBAL\Connection
@@ -28,10 +26,10 @@ class dbrepo
     public $conn;
     
     /**
-     * dbrepo constructor.
+     * DbRepo constructor.
      * @param \Doctrine\DBAL\Connection $conn
      */
-    public function __construct(\Doctrine\DBAL\Connection $conn)
+    public function __construct(Connection $conn)
     {
         $this->conn = $conn;
     }
@@ -45,7 +43,7 @@ class dbrepo
         $stmt = $this->conn->prepare('SELECT * FROM image');
 
         $stmt->execute();
-        $img = $stmt->fetchAll(PDO::FETCH_CLASS, '\\Art\\Image');
+        $img = $stmt->fetchAll(PDO::FETCH_OBJ);
         return $img;
     }
     public function getAllExhibitions()

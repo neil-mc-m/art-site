@@ -5,44 +5,31 @@
 {% endblock %}
 
 {% block content %}
-    <div class="uk-margin uk-width-1-1 uk-text-center"><h1>{{ 'art'|upper }}</h1></div>
-        <div class="uk-margin uk-margin-left uk-margin-right" data-uk-slideset="{small: 2, large: 4}">
+    <div class="uk-text-center"><h1>{{ 'art'|upper }}</h1></div>
             <ul class="uk-flex-center uk-subnav uk-subnav-pill uk-subnav-line">
                 <li data-uk-filter=""><a>All</a></li>
                 <li data-uk-filter="filter-a"><a>Collage</a></li>
                 <li data-uk-filter="filter-b"><a>Oil on canvas</a></li>
             </ul>
-            <div class="uk-slidenav-position">
-                <ul class="uk-slideset uk-grid uk-grid-match uk-flex">
 
-                    {% for image in images %}
-                        <li data-uk-filter="filter-{{ image.filter }}"><a href="#my-panel" data-uk-offcanvas><img src={{ image.path|raw }}><div class="uk-thumbnail-caption">{{ image.name|capitalize }}<br>{{ image.description }}<br>{{ image.medium|capitalize }}<br></div></a></li>
-                    {% endfor %}
-                </ul>
-                    <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideset-item="previous"></a>
-                    <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideset-item="next"></a>
+    <div class="column">
+        {% for image in images %}
+            <div class="item uk-text-center">
+                <a href="#modal{{ image.id }}" data-uk-modal><img class="filter-{{ image.filter }}"src={{ image.path|raw }}>{{ image.name }}</a>
             </div>
-        </div>
-
-        {# sliding panel from the right with information on the painting #}
-
-    <div id="my-panel" class="uk-offcanvas">
-        <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-contrast">
-            <div class="uk-panel">
-
-                <h3 class="uk-panel-title"></h3>
-
-                <p></p>
-
-
+            <div id="modal{{ image.id }}" class="uk-modal">
+                <div class="uk-modal-dialog">
+                    <a class="uk-modal-close uk-close"></a>
+                    {{ image.name|capitalize }}<br>
+                    {{ image.description }}<br>
+                    {{ image.medium|capitalize }}<br>
+                    {{ image.height }} x
+                    {{ image.width }} inches
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-
-
-
-
-
-
-
+{% endblock %}
+{% block javascript %}
+    <script src="{{ asset('js/custom.js') }}"></script>
 {% endblock %}

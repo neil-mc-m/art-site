@@ -5,9 +5,7 @@ html {
 a {
     color: #1a1a1a;
 }
-img {
-    height: 300px;
-}
+
 footer{
     padding: 1%;
     color: #404040;
@@ -98,11 +96,21 @@ input[type=submit] {
     color: #2c2c2c;
 
 }
+.column {
+    column-count: 2;
+    column-gap: 2px;
+    margin: 0.5%;
+}
+.uk-thumbnail-caption {
+    border: thin solid black;
+}
 
 @media (min-width: 600px) {
-    img {
-        height: 400px;
+    .column {
+
+        column-count: 5;
     }
+
     .uk-thumbnail {
 
         height: 500px;

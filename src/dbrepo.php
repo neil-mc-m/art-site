@@ -41,9 +41,9 @@ class DbRepo
     public function getAllImages()
     {
         $stmt = $this->conn->prepare('SELECT * FROM image');
-
         $stmt->execute();
         $img = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
         return $img;
     }
     public function getAllExhibitions()

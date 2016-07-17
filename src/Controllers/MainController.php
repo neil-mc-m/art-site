@@ -94,6 +94,17 @@ class MainController
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }
+    
+    public function hermitExhibitionAction(Application $app)
+    {
+        $hermit = $app['dbrepo']->getAllHermit();
+        $templateName = 'hermit';
+        $args_array = array(
+            'hermit' => $hermit
+        );
+        
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
     /**
      * @param Request $request
      * @param Application $app

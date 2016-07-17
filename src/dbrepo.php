@@ -56,7 +56,7 @@ class DbRepo
     }
     public function getAllSolo()
     {
-        $stmt = $this->conn->prepare('SELECT * FROM exhibition WHERE type="solo"');
+        $stmt = $this->conn->prepare('SELECT * FROM exhibition WHERE type="solo" ORDER BY YEAR DESC');
         $stmt->execute();
         $solo = $stmt->fetchAll(PDO::FETCH_OBJ);
         
@@ -64,10 +64,18 @@ class DbRepo
     }
     public function getAllGroup()
     {
-        $stmt = $this->conn->prepare('SELECT * FROM exhibition WHERE type="group"');
+        $stmt = $this->conn->prepare('SELECT * FROM exhibition WHERE type="group" ORDER BY YEAR DESC');
         $stmt->execute();
         $group = $stmt->fetchAll(PDO::FETCH_OBJ);
         
         return $group;
+    }
+    public function getAllHermit()
+    {
+        $stmt = $this->conn->prepare('SELECT * FROM exhibition WHERE type="hermit" ORDER BY YEAR DESC');
+        $stmt->execute();
+        $hermit = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        return $hermit;
     }
 }

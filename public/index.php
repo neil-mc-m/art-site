@@ -13,6 +13,7 @@ $app->get('/art', 'Art\\Controllers\\MainController::artAction');
 $app->get('/exhibitions', 'Art\\Controllers\\MainController::exhibitionAction');
 $app->get('/exhibitions-solo', 'Art\\Controllers\\MainController::soloExhibitionAction');
 $app->get('/exhibitions-group', 'Art\\Controllers\\MainController::groupExhibitionAction');
+$app->get('/exhibitions-hermit', 'Art\\Controllers\\MainController::hermitExhibitionAction');
 $app->match('/contact', 'Art\\Controllers\\MainController::contactFormAction');
 
 $app->run();

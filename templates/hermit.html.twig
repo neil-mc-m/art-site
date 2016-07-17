@@ -1,17 +1,15 @@
 {% extends 'base.html.twig' %}
 {% set active_page = 'exhibitions' %}
-{% set active_tab = 'exhibitions' %}
+{% set active_tab = 'exhibitions-hermit' %}
 {% set heading = 'exhibitions' %}
 {% block nav %}
     {% include 'partials/navbar.html.twig' %}
 {% endblock %}
-
 {% block content %}
     {% include 'partials/heading.html.twig' %}
-{% include 'partials/subnav.html.twig' %}
-
+    {% include 'partials/subnav.html.twig' %}
     <div class="uk-grid uk-text-center">
-        {% for ex in exhibitions %}
+        {% for ex in hermit %}
             <div class="uk-width-medium-1-3 uk-width-small-1-1">
                 <dl class="uk-description-list-line">
                     <dt>{{ ex.year }}</dt>

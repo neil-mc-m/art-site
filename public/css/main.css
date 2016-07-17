@@ -12,14 +12,20 @@ footer{
     text-align: center;
 }
 .heading {
-    font-family: 'Didact Gothic', sans-serif;
-    margin-top: 3%;
+    font-family: 'El Messiri', sans-serif;
+    padding: 1%;
+    margin: 2%;
+}
+.soc-icons {
+    text-align: center;
+    padding: 1%;
+    color: #81be00;
 }
 .uk-close-alt {
     background: #273746;
 }
 .uk-navbar-brand {
-    font-size: xx-large;
+    font-size: 2.5em;
 }
 .art {
     color: orangered;
@@ -110,7 +116,9 @@ input[type=submit] {
 
         column-count: 5;
     }
-
+    .uk-navbar-brand {
+        font-size: 4em;
+    }
     .uk-thumbnail {
 
         height: 500px;

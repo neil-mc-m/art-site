@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 {% set active_page = 'art' %}
+{% set heading = 'art' %}
 {% block nav %}
 {% include 'partials/navbar.html.twig' %}
 {% endblock %}
 
 {% block content %}
-    <div class="uk-text-center"><h1>{{ 'art'|upper }}</h1></div>
-            <ul class="uk-flex-center uk-subnav uk-subnav-pill uk-subnav-line">
-                <li data-uk-filter=""><a>All</a></li>
-                <li data-uk-filter="filter-a"><a>Collage</a></li>
-                <li data-uk-filter="filter-b"><a>Oil on canvas</a></li>
-            </ul>
-
-    <div class="column">
+   {% include 'partials/heading.html.twig' %}
+    <ul id="filters" class="uk-flex-center uk-subnav uk-subnav-pill uk-subnav-line">
+        <li data-uk-filter=""><a>All</a></li>
+        <li data-uk-filter="filter-a"><a>Collage</a></li>
+        <li data-uk-filter="filter-b"><a>Oil on canvas</a></li>
+    </ul>
+    <div class="column" id="filtered">
         {% for image in images %}
             <div class="item uk-text-center">
                 <a href="#modal{{ image.id }}" data-uk-modal><img class="filter-{{ image.filter }}"src={{ image.path|raw }}>{{ image.name }}</a>
@@ -30,6 +30,4 @@
         {% endfor %}
     </div>
 {% endblock %}
-{% block javascript %}
-    <script src="{{ asset('js/custom.js') }}"></script>
-{% endblock %}
+

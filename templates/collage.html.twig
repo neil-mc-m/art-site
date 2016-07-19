@@ -2,14 +2,14 @@
 {% set active_page = 'art' %}
 {% set heading = 'art' %}
 {% block nav %}
-{% include 'partials/navbar.html.twig' %}
+    {% include 'partials/navbar.html.twig' %}
 {% endblock %}
 
 {% block content %}
-   {% include 'partials/heading.html.twig' %}
+    {% include 'partials/heading.html.twig' %}
     <ul id="filters" class="uk-flex-center uk-subnav uk-subnav-pill uk-subnav-line">
-        <li class="uk-active"><a href="/art">All</a></li>
-        <li><a href="/art-collage">Collage</a></li>
+        <li><a href="/art">All</a></li>
+        <li class="uk-active"><a href="/art-collage">Collage</a></li>
         <li><a href="/art-oil">Oil on canvas</a></li>
     </ul>
     <div class="column" id="filtered">
@@ -30,4 +30,3 @@
         {% endfor %}
     </div>
 {% endblock %}
-

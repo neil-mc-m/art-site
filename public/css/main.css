@@ -7,7 +7,7 @@ a {
 }
 
 footer{
-    padding: 1%;
+    /*padding: 1%;*/
     color: #404040;
     text-align: center;
 }
@@ -103,9 +103,19 @@ input[type=submit] {
 
 }
 .column {
-    column-count: 2;
-    column-gap: 2px;
+    column-count: 1;
+
     margin: 0.5%;
+
+}
+.item {
+    padding: 8%;
+
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+
+    margin-left: 0.5%;
+    margin-right: 0.5%;
 }
 
 .uk-thumbnail-caption {
@@ -116,15 +126,10 @@ input[type=submit] {
     .column {
 
         column-count: 3;
-    }
-    .item {
-        padding: 8%;
+        column-fill: auto;
 
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-
-        margin-left: 0.5%;
-        margin-right: 0.5%;
     }
+
     .uk-navbar-brand {
         font-size: 4em;
     }

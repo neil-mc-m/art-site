@@ -48,6 +48,30 @@ class MainController
     }
 
     /**
+     * @param Application $app
+     * @return mixed
+     */
+    public function collageAction(Application $app)
+    {
+        $img = $app['dbrepo']->getAllCollage();
+        $templateName = 'collage';
+        $args_array = array(
+            'images' => $img
+        );
+        
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
+    public function oilAction(Application $app)
+    {
+        $img = $app['dbrepo']->getAllOil();
+        $templateName = 'oil';
+        $args_array = array(
+            'images' => $img
+        );
+
+        return $app['twig']->render($templateName.'.html.twig', $args_array); 
+    }
+    /**
      * 
      * @param Application $app
      * @return mixed

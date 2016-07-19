@@ -46,6 +46,22 @@ class DbRepo
         
         return $img;
     }
+    public function getAllCollage()
+    {
+        $stmt = $this->conn->prepare('SELECT * FROM image WHERE medium LIKE "%collage%"');
+        $stmt->execute();
+        $img = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        return $img;
+    }
+    public function getAllOil()
+    {
+        $stmt = $this->conn->prepare('SELECT * FROM image WHERE medium LIKE "%oil%"');
+        $stmt->execute();
+        $img = $stmt->fetchAll(PDO::FETCH_OBJ);
+        
+        return $img;
+    }
     public function getAllExhibitions()
     {
         $stmt = $this->conn->prepare('SELECT * FROM exhibition ORDER BY YEAR DESC');

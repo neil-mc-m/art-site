@@ -10,20 +10,20 @@
 
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
 
-    <link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bangers|Amatica+SC' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('/js/uikit.min.js') }}"></script>
     <script src="{{ asset('js/stretchy.js') }}" async></script>
 </head>
-<body>
-<div class="heading uk-flex uk-flex-center">
+<body class="site">
+<main class="site-content">
+<div class="main-heading uk-flex uk-flex-center">
     <a href="/" class="uk-navbar-brand"><span>Dave</span> Ge<span class="art">art</span>y</a>
 </div>
 <div class="uk-flex uk-flex-center">
-    <p class="uk-text-small uk-text-muted">Visual Artist</p>
-
+    <p class="uk-text-muted">Visual Artist</p>
 </div>
 {% block nav %}
 {% endblock %}
@@ -32,13 +32,13 @@
 {# content block #}
 {% block content %}
 {% endblock %}
-
+</main>
 {# the footer #}
 <footer>
 
     <i class="uk-icon-cog"></i>
     <i class="uk-icon-flash"></i>
-    <p>&copy;2016 Dg.com</p>
+    <p>&copy;2016 www.davegeartyart.info</p>
 </footer>
 {# javascript functions #}
 {% block javascript %}

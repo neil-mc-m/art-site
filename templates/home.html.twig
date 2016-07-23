@@ -7,19 +7,30 @@
 
 {% block content %}
     {% include 'partials/heading.html.twig' %}
-    <div class="uk-flex uk-flex-center">
-
-            <img class="uk-thumbnail" src="{{ asset('/images/business_as_usual2.jpg') }}" alt="collage 4 pic">
-
+    <div class="uk-grid">
+        <div class="uk-width-medium-1-3">
+            <div class="uk-panel"><img src="{{ asset('/images/business_as_usual2.jpg') }}" alt="random picture"></div>
+        </div>
+        <div class="uk-width-medium-2-3">
+            <div class="uk-grid">
+                <div class="uk-width-medium-3-4">
+                    <h1 class="uk-article-title">{{ 'Dave Gearty, portrait of an artist'|upper }}</h1>
+                    <p class="uk-article-meta">Dave is a sligo based artist</p>
+                    <p class="uk-article-lead">Dave is a well respected member of the irish art scene.</p>
+                    <p class="uk-article-meta">Based in the northwest of Ireland, Specialising in a variety of media: collage, wood, mixed media, & oil painting</p>
+                    <p>Dave works predominantly in the medium of painting, but includes collage and mixed media in his installations. Dave completed an B.A Honours, fine art with distinction at the Sligo school of Fine Art in 2006. He has had solo shows in Iontas, New-work and the mill, Dundrum</p>
+                    <p>His paintings were selected for the 2005 Iontas “Small Works Exhibition” in Sligo Art Gallery and his current work draws on material from photographs in books and magazines. Imagery is then manipulated on computer before being further developed in the process of oil painting.</p>
+                </div>
+                <div class="uk-width-medium-1-4">
+                    <h2 class="uk-text-center">Links</h2>
+                    <ul class="navbar">
+                        <li><a href="http://hermitcollective.weebly.com/">The Hermit Collective</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <article class="uk-article uk-text-center">
-            <h1 class="uk-article-title">Dave Gearty, portrait of an artist</h1>
-            <p class="uk-article-meta">Dave is a sligo based artist</p>
-            <p class="uk-article-lead">Dave is a well respected member of the irish art scene.</p>
 
-            ...
-        </article>
-    </div>
+
 
 {% endblock %}

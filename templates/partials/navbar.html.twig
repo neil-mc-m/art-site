@@ -7,18 +7,14 @@
         <ul class="uk-container navbar uk-hidden-small">
 
             {% for item in navbar %}
-                <li{% if item[0] == active_page %} class="active uk-animation-hover"{% endif %} class="uk-animation-hover uk-animation-fade"><a
+                <li{% if item[0] == active_page %} class="active uk-animation-hover"{% endif %} class="uk-animation-hover"><a
                             href="{{ global.request.basepath }}/{{ (item[0]) }}" class="">{{ item[1] }}</a></li>
             {% endfor %}
 
         </ul>
 
     </div>
-    <div class="soc-icons">
-        <i class="uk-icon-twitter-square"></i>
-        <i class="uk-icon-google"></i>
 
-    </div>
 
 
 </nav>

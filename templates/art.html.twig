@@ -1,33 +1,18 @@
 {% extends 'base.html.twig' %}
+{# set the variables needed by the navbar, heading and subnav fragments #}
 {% set active_page = 'art' %}
 {% set heading = 'art' %}
+{% set active_tab = 'art' %}
+{# navbar block #}
 {% block nav %}
 {% include 'partials/navbar.html.twig' %}
 {% endblock %}
-
+{# content block #}
 {% block content %}
-   {% include 'partials/heading.html.twig' %}
-    <ul id="filters" class="uk-flex-center uk-subnav uk-subnav-pill uk-subnav-line">
-        <li class="uk-active"><a href="/art">All</a></li>
-        <li><a href="/art-collage">Collage</a></li>
-        <li><a href="/art-oil">Oil on canvas</a></li>
-    </ul>
-    <div class="column" id="filtered">
-        {% for image in images %}
-            <div class="item uk-text-center">
-                <a href="#modal{{ image.id }}" data-uk-modal><img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:300, repeat: true}" src={{ image.path|raw }}>{{ image.name }}</a>
-            </div>
-            <div id="modal{{ image.id }}" class="uk-modal">
-                <div class="uk-modal-dialog">
-                    <a class="uk-modal-close uk-close"></a>
-                    {{ image.name|capitalize }}<br>
-                    {{ image.description }}<br>
-                    {{ image.medium|capitalize }}<br>
-                    {{ image.height }} x
-                    {{ image.width }} inches
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+    {# include the fragments common to each page #}
+    {% include 'partials/heading.html.twig' %}
+    {% include 'partials/art_subnav.html.twig' %}
+    {# main page content #}
+    {% include 'partials/art_content.html.twig' %}
 {% endblock %}
 

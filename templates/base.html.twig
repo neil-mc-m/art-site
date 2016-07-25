@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="The official website for the visual artist, Dave Gearty, a sligo based artist.">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title %}Dave Gearty | Artist{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ asset('/css/uikit.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
-
-    <link href='https://fonts.googleapis.com/css?family=Bangers|Amatica+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+    {#<link href='https://fonts.googleapis.com/css?family=Bangers|Amatica+SC' rel='stylesheet' type='text/css'>#}
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -18,30 +19,36 @@
     <script src="{{ asset('js/stretchy.js') }}" async></script>
 </head>
 <body class="site">
-<main class="site-content">
-<div class="main-heading uk-flex uk-flex-center">
-    <a href="/" class="uk-navbar-brand"><span>Dave</span> Ge<span class="art">art</span>y</a>
-</div>
-<div class="uk-flex uk-flex-center">
-    <p class="uk-text-muted">Visual Artist</p>
-</div>
-{% block nav %}
-{% endblock %}
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <main class="site-content">
+        <div class="main-heading uk-flex uk-flex-center">
+            <a href="/" class="uk-navbar-brand"><span>Dave</span> Ge<span class="art">art</span>y</a>
+        </div>
+        <div class="uk-flex uk-flex-center">
+            <p class="uk-text-muted">Visual Artist</p>
+        </div>
 
+        {% block nav %}
+        {% endblock %}
 
-{# content block #}
-{% block content %}
-{% endblock %}
-</main>
-{# the footer #}
-<footer>
-
-    <i class="uk-icon-cog"></i>
-    <i class="uk-icon-flash"></i>
-    <p>&copy;2016 www.davegeartyart.info</p>
-</footer>
-{# javascript functions #}
-{% block javascript %}
-{% endblock %}
+        {# content block #}
+        {% block content %}
+        {% endblock %}
+    </main>
+    {# the footer #}
+    <footer>
+        {#<a href="#">home</a>#}
+        {#<a href="#">art-work</a>#}
+        {#<a href="#">exhibitions</a>#}
+        {#<a href="#">contact</a><br>#}
+        <i class="uk-icon-cog"></i>
+        <i class="uk-icon-flash"></i>
+        <p>&copy;2016 www.davegeartyart.info</p>
+    </footer>
+    {# javascript functions #}
+    {% block javascript %}
+    {% endblock %}
 </body>
 </html>

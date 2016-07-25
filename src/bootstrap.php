@@ -16,8 +16,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.named_packages' => array(
         'js'     => array('version' => 'uikitJS', 'base_path' => '/js'),
-        'css'    => array('version' => 'css', 'base_path' => '/css'),
-        'images' => array('version' => 'original', 'base_path' => '/images')
+        'css'    => array('version' => 'css', 'base_path' => '/build'),
+        'images' => array('version' => 'original', 'base_path' => '/build')
     )
 ));
 $config = parse_ini_file('../config/config.ini');

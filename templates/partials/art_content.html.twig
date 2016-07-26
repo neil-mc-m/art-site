@@ -1,6 +1,6 @@
-<div class="column">
+<div id="view" class="column">
     {% for image in images %}
-        <div class="item uk-text-center">
+        <div class="thumbs item uk-text-center">
             <a href="#modal{{ image.id }}" data-uk-modal><img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:300, repeat: true}" src={{ image.path|raw }}>{{ image.name }}</a>
         </div>
         <div id="modal{{ image.id }}" class="uk-modal">

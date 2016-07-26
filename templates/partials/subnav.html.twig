@@ -2,6 +2,6 @@
 {% set subnav = [['exhibitions', 'All'], ['exhibitions-solo', 'Solo'], ['exhibitions-group', 'Group'], ['exhibitions-hermit', 'Hermit Collective']] %}
 <ul class="uk-flex-center uk-subnav uk-subnav-pill uk-subnav-line">
     {% for item in subnav %}
-    <li {% if item[0] == active_tab %}class="active"{% endif %}><a href="{{ global.request.basepath }}/{{ item[0] }}">{{ item[1] }}</a> </li>
+    <li {% if item[0] == active_tab %}class="active"{% endif %}><a href="{{ global.request.basepath }}/{{ item[0] }}" class="main-link">{{ item[1] }}</a> </li>
     {% endfor %}
 </ul>

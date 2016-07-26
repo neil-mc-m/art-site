@@ -2,18 +2,18 @@ html {
     font-size: medium;
     font-family: 'Lato', sans-serif;
 }
-a {
+ a.main-link {
     color: #1a1a1a;
     font-family: 'Anton', sans-serif;
 }
-
-i {
-    margin-top: 2%;
+.alt-link {
+    font-family: 'Lato', sans-serif;
 }
+
 footer{
     color: white;
     background-color: #34495E;
-    text-align: center;
+
     padding: 1%;
 }
 .site {
@@ -37,9 +37,12 @@ footer{
 }
 
 .uk-navbar-brand {
+    font-family: 'Anton', sans-serif;
     font-size: 2.5em;
 }
-
+a.foot-nav  {
+    color: white;
+}
 .art {
     flex: 1;
     color: #C70039;
@@ -116,6 +119,7 @@ li.active {
     column-count: 1;
     margin: 0.5%;
 }
+
 .item {
     padding: 8%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);

@@ -15,4 +15,7 @@
     {# main page content #}
     {% include 'partials/art_content.html.twig' %}
 {% endblock %}
+{% block javascript %}
+    <script src="{{ asset('/js/custom.js') }}"></script>
+{% endblock %}
 

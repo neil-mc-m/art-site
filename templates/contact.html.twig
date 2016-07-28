@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% set active_page = 'contact' %}
+{% set heading = 'contact' %}
 {% if form is defined %}
     {% form_theme form 'partials/form.html.twig' %}
 {% endif %}
@@ -9,19 +10,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="uk-margin uk-width-1-1 uk-text-center">
-        <h1 class="uk-h2 uk-text-bold">{{ 'contact'|upper }}</h1>
-    </div>
-{% if sent == true %}
-    <p>Thanks for getting in touch! I'll get back to you as soon as i can.</p>
+    {% include 'partials/heading.html.twig' %}
+    {% if sent == true %}
+        <p class="uk-medium-width-1-2 uk-text-center">Thanks for getting in touch! I'll get back to you as soon as i can.</p>
     {% else %}
-        <p>Fill in your details and your message and ill get back to you as soon as possible.</p>
+        <p class="uk-medium-width-1-2 uk-text-center">Fill in your details and your message and ill get back to you as soon as possible.</p>
 
     <div class="uk-flex uk-flex-center">
         <form class="uk-form" action="/contact" method="post">
+
             {{ form_start(form) }}
             {{ form_errors(form) }}
-
+            <fieldset data-uk-margin>
+                <legend>get in touch</legend>
             <div class="form-control">
              {{ form_label(form.name, 'Your Name:') }}<br>
                 <div class="uk-form-row">
@@ -49,7 +50,9 @@
             <div class="form-control">
                 <input type="submit" name="submit"/>
             </div>
+            </fieldset>
         {{ form_end(form) }}
+
         </form>
     </div>
 {% endif %}

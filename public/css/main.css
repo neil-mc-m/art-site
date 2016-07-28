@@ -3,9 +3,10 @@ html {
     font-family: 'Lato', sans-serif;
 }
  a.main-link {
-    color: #1a1a1a;
-    font-family: 'Anton', sans-serif;
+     color: #1a1a1a;
+     font-family: 'Candal', sans-serif;
 }
+
 .alt-link {
     font-family: 'Lato', sans-serif;
 }
@@ -13,7 +14,6 @@ html {
 footer{
     color: white;
     background-color: #34495E;
-
     padding: 1%;
 }
 .site {
@@ -29,7 +29,7 @@ footer{
     margin: 1%;
 }
 .heading {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Candal', sans-serif;
     padding: 1%;
     margin: 2%;
     font-size: 2em;
@@ -37,7 +37,7 @@ footer{
 }
 
 .uk-navbar-brand {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Candal', sans-serif;
     font-size: 2.5em;
 }
 a.foot-nav  {
@@ -133,7 +133,7 @@ li.active {
 
 @media (min-width: 600px) {
     .column {
-        column-count: 3;
+        column-count: 4;
         column-fill: auto;
     }
 

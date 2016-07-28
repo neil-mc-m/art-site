@@ -49,9 +49,8 @@ class ContactType extends  AbstractType
                         'min' => 20
                     ))),
                 'attr' => array(
-                    'class' => 'uk-form-width-large',
                     'placeholder' => 'Your Message',
-                    'rows' => 15
+                    'rows' => 10
                 )
             ));
     }

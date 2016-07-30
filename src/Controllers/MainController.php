@@ -151,8 +151,9 @@ class MainController
             $message = \Swift_Message::newInstance()
                 ->setSubject('Dave Gearty Contact form')
                 ->setFrom(array($data['email'] => $data['name']))
-                //->setTo(array('feedback@lilyandlarryllamafarmers.com'))
+//                ->setTo(array('feedback@lilyandlarryllamafarmers.com'))
                 ->setTo(array('neilo2000@gmail.com'))
+                ->setReplyTo(array($data['email'] => $data['name']))
                 ->setBody($data['message']);
 
             $app['mailer']->send($message);

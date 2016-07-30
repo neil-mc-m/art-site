@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         autoprefixer: {
             options: {
-                browsers: ['last 2 versions']
+                browsers: ['> 5%', 'last 2 versions', 'ie 11']
             },
             dist: {
                 files: {

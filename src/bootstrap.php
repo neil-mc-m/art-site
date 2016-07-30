@@ -17,12 +17,12 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.named_packages' => array(
         'js'     => array('version' => 'uikitJS', 'base_path' => '/js'),
         'css'    => array('version' => 'css', 'base_path' => '/build'),
-        'images' => array('version' => 'original', 'base_path' => '/build')
+        'images' => array('version' => 'optimised', 'base_path' => '/build')
     )
 ));
-$config = parse_ini_file('../config/config.ini');
+$config = parse_ini_file('../config/config.ini', true);
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-    'db.options' => $config
+    'db.options' => $config['database']
 ));
 $app->register(new \Art\DbRepoServiceProvider());
 $app->register(new Silex\Provider\FormServiceProvider());
@@ -37,13 +37,6 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'translator.domains' => array(),
 ));
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
-$app['swiftmailer.options'] = array(
-    'host' => 'smtp.gmail.com',
-    'port' => 465,
-    'username' => 'neilmcmahon40@gmail.com',
-    'password' => 'Barra2016',
-    'encryption' => 'ssl',
-    'auth_mode' => 'login'
-);
+$app['swiftmailer.options'] = $config['email'];
 
 return $app;

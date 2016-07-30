@@ -1,7 +1,7 @@
 <div id="view" class="column">
     {% for image in images %}
         <div class="item uk-text-center">
-            <a class="main-link" href="#modal{{ image.id }}" data-uk-modal><img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:300, repeat: true}" src={{ image.path|raw }}>{{ image.name }}</a>
+            <a class="main-link" href="#modal{{ image.id }}" data-uk-modal><img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:200}" src={{ image.path|raw }}>{{ image.name }}</a>
         </div>
         <div id="modal{{ image.id }}" class="uk-modal">
             <div class="uk-modal-dialog">

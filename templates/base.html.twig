@@ -10,7 +10,7 @@
     <title>{% block title %}Dave Gearty | Artist{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ asset('/css/uikit.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="{{ asset('/images/favicon.ico') }}">
@@ -39,7 +39,7 @@
         {% endblock %}
     </main>
     {# the footer #}
-    <footer>
+    <footer class="site-footer">
 
         <div class="uk-text-center">
             <i class="uk-icon-cog"></i>

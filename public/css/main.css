@@ -16,13 +16,16 @@ footer{
     background-color: #34495E;
     padding: 1%;
 }
+
 .site {
     display: flex;
+    height: 100%;
     min-height: 100vh;
     flex-direction: column;
 }
+
 .site-content {
-    flex: 1;
+    flex: 1 0 auto;
 }
 .main-heading {
     padding: 1%;
@@ -134,7 +137,7 @@ li.active {
 @media (min-width: 600px) {
     .column {
         column-count: 4;
-        column-fill: auto;
+        column-fill: balance;
     }
 
     .uk-navbar-brand {

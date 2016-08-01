@@ -1,14 +1,20 @@
 <div id="view" class="column">
     {% for image in images %}
         <div class="item uk-text-center">
-            <a class="main-link" href="#modal{{ image.id }}" data-uk-modal><img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:200}" src={{ image.path|raw }}>{{ image.name }}</a>
+            <figure class="uk-overlay">
+            <a class="main-link" href="#modal{{ image.id }}" data-uk-modal>
+                <img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:200}" src="{{ asset(image.path, 'images') }}" alt="{{ image.name }} pic">
+                <figcaption>
+                    {{ image.name }}
+                </figcaption></a>
+                </figure>
         </div>
         <div id="modal{{ image.id }}" class="uk-modal">
             <div class="uk-modal-dialog">
                 <a class="uk-modal-close uk-close"></a>
-                {{ image.name|capitalize }}<br>
-                {{ image.medium|capitalize }}<br>
-                {{ image.height }}<span class="uk-text-muted">h</span> x {{ image.width }}<span class="uk-text-muted">w</span> inches
+                <strong>Name:</strong> {{ image.name|capitalize }}<br>
+                <strong>Medium</strong>: {{ image.medium|capitalize }}<br>
+                <strong>Dimensions</strong>: {{ image.height }}<span class="uk-text-muted">h</span> x {{ image.width }}<span class="uk-text-muted">w</span> inches
             </div>
         </div>
     {% endfor %}

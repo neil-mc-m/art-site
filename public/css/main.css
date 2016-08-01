@@ -124,15 +124,21 @@ li.active {
 }
 
 .item {
-    padding: 8%;
+    padding: 1%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
     margin-left: 0.5%;
     margin-right: 0.5%;
+    -webkit-column-break-inside: avoid;
 }
 
-.uk-thumbnail-caption {
-    border: thin solid black;
+.form {
+    margin-right: 3%;
+    margin-left: 3%;
 }
+input {
+    width: 100%;
+}
+
 
 @media (min-width: 600px) {
     .column {
@@ -146,6 +152,16 @@ li.active {
 
     .uk-thumbnail {
         height: 500px;
+    }
+    input {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+    }
+    .form {
+        display: flex;
+        justify-content: center;
     }
 }
 

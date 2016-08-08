@@ -34,13 +34,11 @@ class ContactType extends  AbstractType
                         'min' => 3
                     ))),
                 'attr' => array(
-
                     'placeholder' => 'Name'
                 )))
             ->add('email', EmailType::class, array(
                 'constraints' => new Assert\Email(),
                 'attr' => array(
-
                     'placeholder' => 'Yourname@somethingmail.com'
                 )))
             ->add('message', TextareaType::class, array(
@@ -49,7 +47,6 @@ class ContactType extends  AbstractType
                         'min' => 20
                     ))),
                 'attr' => array(
-
                     'placeholder' => 'Your Message',
                     'rows' => 5,
                     'cols' => 65

@@ -18,4 +18,4 @@ $app->get('/exhibitions-group', 'Art\\Controllers\\MainController::groupExhibiti
 $app->get('/exhibitions-hermit', 'Art\\Controllers\\MainController::hermitExhibitionAction');
 $app->match('/contact', 'Art\\Controllers\\MainController::contactFormAction');
 
-$app->run();
+$app['http_cache']->run();

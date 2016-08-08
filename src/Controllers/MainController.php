@@ -11,6 +11,7 @@ use Art\ContactType;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class MainController
@@ -43,8 +44,10 @@ class MainController
         $args_array = array(
             'images' => $img
         );
+        $response = new Response($app['twig']->render($templateName.'.html.twig', $args_array));
+        $response->setSharedMaxAge(120);
         
-        return $app['twig']->render($templateName.'.html.twig', $args_array);
+        return $response;
     }
 
     /**
@@ -151,8 +154,7 @@ class MainController
             $message = \Swift_Message::newInstance()
                 ->setSubject('Dave Gearty Contact form')
                 ->setFrom(array($data['email'] => $data['name']))
-//                ->setTo(array('feedback@lilyandlarryllamafarmers.com'))
-                ->setTo(array('neilo2000@gmail.com'))
+                ->setTo(array('dvg013@gmail.com'))
                 ->setReplyTo(array($data['email'] => $data['name']))
                 ->setBody($data['message']);
 

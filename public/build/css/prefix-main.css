@@ -4,7 +4,7 @@ html {
 }
  a.main-link {
      color: #1a1a1a;
-     font-family: 'Candal', sans-serif;
+     /*font-family: 'Candal', sans-serif;*/
 }
 
 .alt-link {
@@ -16,7 +16,8 @@ footer{
     background-color: #34495E;
     padding: 1%;
 }
-
+/*needed for the sticky footer*/
+/************************/
 .site {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -34,10 +35,14 @@ footer{
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
 }
+/************************/
+
 .main-heading {
     padding: 1%;
     margin: 1%;
 }
+
+/*page headings eg. about, art-work, exhibitions, contact*/
 .heading {
     font-family: 'Candal', sans-serif;
     padding: 1%;
@@ -47,17 +52,20 @@ footer{
 }
 
 .uk-navbar-brand {
-    font-family: 'Candal', sans-serif;
+    /*font-family: 'Candal', sans-serif;*/
+    color: #34495E;
     font-size: 2.5em;
 }
 a.foot-nav  {
     color: white;
 }
+
+/*style the art in gearty*/
 .art {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    color: #C70039;
+    color: #1a1a1a;
 }
 
 .uk-container {
@@ -168,7 +176,7 @@ input {
     }
 
     .uk-navbar-brand {
-        font-size: 4em;
+        font-size: 3.5em;
     }
 
     .uk-thumbnail {

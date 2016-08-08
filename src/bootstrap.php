@@ -6,7 +6,7 @@
  * Time: 23:46
  */
 require __DIR__ . '/../vendor/autoload.php';
-
+use Symfony\Component\HttpFoundation\Request;
 $app = new Silex\Application();
 // turn on for developing
 $app['debug'] = true;
@@ -38,5 +38,9 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
 ));
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 $app['swiftmailer.options'] = $config['email'];
-
+$app->register(new Silex\Provider\HttpCacheServiceProvider(), array(
+    'http_cache.cache_dir' => __DIR__.'/../cache',
+    'http_cache.esi'       => null
+));
+Request::setTrustedProxies(array('127.0.0.1'));
 return $app;

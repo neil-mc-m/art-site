@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Request;
 $app = new Silex\Application();
 // turn on for developing
-$app['debug'] = true;
+//$app['debug'] = true;
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/../templates'
 ));

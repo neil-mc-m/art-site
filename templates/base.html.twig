@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The official website for the visual artist, Dave Gearty, a sligo based artist.">
+    <meta name="author" content="web dev by neil mcmahon.">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="google-site-verification" content="LaLOM8iSjGdwZbZhOoppL9Ds_ZLGcWDHKMNlVJnc1Vk" />
 
     <title>{% block title %}Dave Gearty | Artist{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ asset('/css/uikit.min.css') }}">
+    {# switch to this file while developing. #}
+    {#<link rel="stylesheet" href="{{ asset('/css/main.css') }}">#}
     <link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link rel="icon" type="image/png" href="{{ asset('/images/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="/favicon.ico">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('/js/uikit.min.js') }}"></script>
-    <script src="{{ asset('js/stretchy.js') }}" async></script>
 </head>
 <body class="site">
     <!--[if lt IE 8]>
@@ -25,7 +27,7 @@
     <![endif]-->
     <main class="site-content">
         <div class="main-heading uk-flex uk-flex-center">
-            <a href="/" class="uk-navbar-brand"><span>Dave</span> Ge<span class="art">art</span>y</a>
+            <a href="/" class="uk-navbar-brand">Dave Ge<span class="art">art</span>y</a>
         </div>
         <div class="uk-flex uk-flex-center">
             <p class="uk-text-muted">Visual Artist</p>

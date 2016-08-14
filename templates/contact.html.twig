@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 {% set active_page = 'contact' %}
 {% set heading = 'contact' %}
-{% if form is defined %}
-    {% form_theme form 'partials/form.html.twig' %}
-{% endif %}
+{#{% if form is defined %}#}
+    {#{% form_theme form 'partials/form.html.twig' %}#}
+{#{% endif %}#}
 
 {% block nav %}
     {% include 'partials/navbar.html.twig' %}
@@ -16,32 +16,31 @@
     {% else %}
         <p class="uk-medium-width-1-2 uk-text-center">Fill in your details and your message and ill get back to you as soon as possible.</p>
 
-    <div class="uk-flex uk-flex-center">
-        <form class="uk-form" action="/contact" method="post">
+    <div class="form">
+        <form class="uk-form uk-form-horizontal" action="/contact" method="post">
 
-            {{ form_start(form) }}
+            {#{{ form_start(form) }}#}
             {{ form_errors(form) }}
-            <fieldset data-uk-margin>
-                <legend>get in touch</legend>
-            <div class="form-control">
-             {{ form_label(form.name, 'Your Name:') }}<br>
-                <div class="uk-form-row">
+
+            <div class="uk-form-row">
+             {{ form_label(form.name, 'Name:', { 'label_attr': {'class': 'uk-form-label'} }) }}
+                <div class="uk-form-controls">
                 {{ form_widget(form.name) }}
                 {{ form_errors(form.name) }}
                 </div>
             </div>
 
-            <div class="form-control">
-            {{ form_label(form.email, 'Your Email:') }}<br>
-                <div class="form-input">
+            <div class="uk-form-row">
+            {{ form_label(form.email, 'Email:', { 'label_attr': {'class': 'uk-form-label'} }) }}
+                <div class="uk-form-controls">
                 {{ form_errors(form.email) }}
                 {{ form_widget(form.email) }}
                 </div>
             </div>
 
-            <div class="form-control">
-            {{ form_label(form.message, 'Your Message:') }}<br>
-                <div class="form-textarea">
+            <div class="uk-form-row">
+            {{ form_label(form.message, 'Message:', { 'label_attr': {'class': 'uk-form-label'}} ) }}
+                <div class="uk-form-controls">
                 {{ form_errors(form.message) }}
                 {{ form_widget(form.message) }}
                  </div>
@@ -50,8 +49,8 @@
             <div class="form-control">
                 <input type="submit" name="submit"/>
             </div>
-            </fieldset>
-        {{ form_end(form) }}
+
+        {#{{ form_end(form) }}#}
 
         </form>
     </div>

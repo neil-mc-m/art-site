@@ -26,7 +26,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 $app->register(new \Art\DbRepoServiceProvider());
 $app->register(new Silex\Provider\FormServiceProvider());
-$app->extend('form.types', function ($types) use ($app) {
+$app->extend('form.types', function ($types) {
     $types[] = new \Art\ContactType();
 
     return $types;
@@ -39,11 +39,9 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'pattern' => '^/admin',
             'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
             'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
-            'users' => array($config['login']['user'] => array($config['login']['role'],$config['login']['password'])),
-
-
-//                array(
-//                'davegearty' => array('ROLE_ADMIN', '$2y$10$3i9/lVd8UOFIJ6PAMFt8gu3/r5g0qeCJvoSlLCsvMTythye19F77a')
+            'users' => array($config['login']['user'] => array(
+                $config['login']['role'],$config['login']['password']
+            )),
             ),
         ),
     )

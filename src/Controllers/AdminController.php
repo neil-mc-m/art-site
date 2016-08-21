@@ -14,8 +14,6 @@ Class AdminController
      */
     public function loginAction(Request $request, Application $app)
     {
-        $token = $app['security.token_storage']->getToken();
-
         $args_array = array(
             'error' => $app['security.last_error']($request),
             'last_username' => $app['session']->get('_security.last_username'),

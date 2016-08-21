@@ -1,18 +1,17 @@
 {
     "name": "neil/art-site",
     "description": "dependencies for the website of dave gearty",
-    "version": "1",
     "type": "website",
-    "keywords": ["visual artist", "cool", "art"],
+    "keywords": ["visual artist", "sligo", "art"],
     "homepage": "http://davegeartyart.info",
     "time": "8/8/2016",
     "license": "MIT",
-    "author": {
+    "authors": [{
             "name": "Neil McMahon",
             "email": "neilo2000@gmail.com",
             "homepage": "http://www.sitelab.info",
             "role": "Developer"
-        },
+        }],
     "require": {
         "silex/silex": "~2.0",
         "twig/twig": "~1.0",

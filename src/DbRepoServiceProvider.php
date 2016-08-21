@@ -10,11 +10,17 @@ namespace Art;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Silex\Application;
 
 
+/**
+ * Class DbRepoServiceProvider
+ * @package Art
+ */
 class DbRepoServiceProvider implements ServiceProviderInterface
 {
+    /**
+     * @param Container $app
+     */
     public function register(Container $app)
     {
         $app['dbrepo'] = function() use($app){

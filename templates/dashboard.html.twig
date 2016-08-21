@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    Welcome, {{ app.user.username }}
+    <a href="{{ path('admin_logout') }}">Logout</a>
+{% endblock %}

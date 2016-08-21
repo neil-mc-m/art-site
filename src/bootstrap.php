@@ -31,6 +31,23 @@ $app->extend('form.types', function ($types) use ($app) {
 
     return $types;
 });
+
+$app->register(new Silex\Provider\SessionServiceProvider());
+$app->register(new Silex\Provider\SecurityServiceProvider(), array(
+    'security.firewalls' => array(
+        'admin' => array(
+            'pattern' => '^/admin',
+            'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
+            'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
+            'users' => array($config['login']['user'] => array($config['login']['role'],$config['login']['password'])),
+
+
+//                array(
+//                'davegearty' => array('ROLE_ADMIN', '$2y$10$3i9/lVd8UOFIJ6PAMFt8gu3/r5g0qeCJvoSlLCsvMTythye19F77a')
+            ),
+        ),
+    )
+);
 $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="form">
+    <form class="uk-form" action="{{ path('admin_login_check') }}" method="post">
+        {{ error }}
+        <div class="uk-form-row">
+            <input type="text" name="_username" value="{{ last_username }}" placeholder="username" />
+        </div>
+        <div class="uk-form-row">
+            <input type="password" name="_password" value="" placeholder="password" />
+        </div>
+        <input type="hidden" name="_target_path" value="/admin/dashboard"/>
+        <div class="uk-form-row">
+            <input type="submit" />
+        </div>
+    </form>
+    </div>
+{% endblock %}

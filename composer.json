@@ -7,7 +7,7 @@
     "homepage": "http://davegeartyart.info",
     "time": "8/8/2016",
     "license": "MIT",
-    "authors": {
+    "author": {
             "name": "Neil McMahon",
             "email": "neilo2000@gmail.com",
             "homepage": "http://www.sitelab.info",
@@ -24,7 +24,8 @@
         "symfony/config": "^3.1",
         "symfony/translation": "^3.1",
         "swiftmailer/swiftmailer": "^5.4",
-        "symfony/security-csrf": "^3.1"
+        "symfony/security-csrf": "^3.1",
+        "symfony/security": "^3.1"
     },
     "autoload": {
         "psr-4": {

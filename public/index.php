@@ -16,6 +16,9 @@ $app->get('/exhibitions', 'Art\\Controllers\\MainController::exhibitionAction');
 $app->get('/exhibitions-solo', 'Art\\Controllers\\MainController::soloExhibitionAction');
 $app->get('/exhibitions-group', 'Art\\Controllers\\MainController::groupExhibitionAction');
 $app->get('/exhibitions-hermit', 'Art\\Controllers\\MainController::hermitExhibitionAction');
+$app->get('/admin/dashboard', 'Art\\Controllers\\AdminController::dashboardAction');
+$app->get('/admin', 'Art\\Controllers\\AdminController::loginAction');
+$app->get('/login', 'Art\\Controllers\\AdminController::loginAction');
 $app->match('/contact', 'Art\\Controllers\\MainController::contactFormAction');
 
 $app['http_cache']->run();

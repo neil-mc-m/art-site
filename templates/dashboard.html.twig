@@ -1,11 +1,60 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    Welcome, {{ app.user.username }}
-    <a href="{{ path('admin_logout') }}">Logout</a>
-    <div class="main">
-        <form action="#" method="post">
+<div class="uk-block-muted uk-block-large">
+    <p class="uk-text-center">Welcome, {{ app.user.username }}</p>
+    <ul class="uk-flex-center uk-subnav">
+        <li><a class="uk-button uk-button-success" href="{{ path('admin_logout') }}">Logout</a></li>
+    </ul>
+    <p class="uk-text-center">
+        Here you can update your exhibitions page. Fill in the form below and your exhibition will be addded to your page.
+    </p>
 
+    <div class="form">
+        <form class="uk-form uk-form-horizontal" action="#" method="post">
+            {#{{ form_start(form) }}#}
+            {{ form_errors(form) }}
+
+            <div class="uk-form-row">
+                {{ form_label(form.name, 'Name:', { 'label_attr': {'class': 'uk-form-label'} }) }}
+                <div class="uk-form-controls">
+                    {{ form_widget(form.name) }}
+                    {{ form_errors(form.name) }}
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                {{ form_label(form.location, 'Location:', { 'label_attr': {'class': 'uk-form-label'} }) }}
+                <div class="uk-form-controls">
+                    {{ form_errors(form.location) }}
+                    {{ form_widget(form.location) }}
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                {{ form_label(form.type, 'Type:', { 'label_attr': {'class': 'uk-form-label'}} ) }}
+                <div class="uk-form-controls">
+                    {{ form_errors(form.type) }}
+                    {{ form_widget(form.type) }}
+                </div>
+            </div>
+
+            <div class="uk-form-row">
+                {{ form_label(form.date, 'Date', { 'label_attr': {'class': 'uk-form-label'}} ) }}
+                <div class="uk-form-controls">
+                    {{ form_errors(form.date) }}
+                    {{ form_widget(form.date) }}
+                </div>
+            </div>
+
+
+
+            <div class="form-control">
+                <input class="uk-button uk-button-primary" type="submit" name="submit"/>
+            </div>
+
+            {#{{ form_end(form) }}#}
         </form>
     </div>
+</div>
 {% endblock %}

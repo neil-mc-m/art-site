@@ -1,6 +1,7 @@
 <?php
 namespace Art\Controllers;
 
+use Art\UpdateType;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -25,13 +26,22 @@ Class AdminController
      * @param Application $app
      * @return mixed
      */
-    public function dashboardAction(Application $app)
+    public function dashboardAction(Request $request, Application $app)
     {
+        $data = array(
+            'name' => '',
+            'location' => '',
+            'type' => '',
+        );
+        $form = $app['form.factory']
+            ->createBuilder(UpdateType::class, $data)
+            ->getForm();
+        $form->handleRequest($request);
         $user = $app['user'];
         $app['session']->set('user', array('username' => $user));
         $templateName = 'dashboard';
         $args_array = array(
-
+            'form' => $form->createView()
         );
 
         return $app['twig']->render($templateName.'.html.twig', $args_array);

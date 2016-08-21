@@ -20,35 +20,35 @@
         <form class="uk-form uk-form-horizontal" action="/contact" method="post">
 
             {#{{ form_start(form) }}#}
-            {{ form_errors(form) }}
+        {{ form_errors(form) }}
 
-            <div class="uk-form-row">
-             {{ form_label(form.name, 'Name:', { 'label_attr': {'class': 'uk-form-label'} }) }}
-                <div class="uk-form-controls">
+        <div class="uk-form-row">
+            {{ form_label(form.name, 'Name:', { 'label_attr': {'class': 'uk-form-label'} }) }}
+            <div class="uk-form-controls">
                 {{ form_widget(form.name) }}
                 {{ form_errors(form.name) }}
-                </div>
             </div>
+        </div>
 
-            <div class="uk-form-row">
+        <div class="uk-form-row">
             {{ form_label(form.email, 'Email:', { 'label_attr': {'class': 'uk-form-label'} }) }}
-                <div class="uk-form-controls">
+            <div class="uk-form-controls">
                 {{ form_errors(form.email) }}
                 {{ form_widget(form.email) }}
-                </div>
             </div>
+        </div>
 
-            <div class="uk-form-row">
+        <div class="uk-form-row">
             {{ form_label(form.message, 'Message:', { 'label_attr': {'class': 'uk-form-label'}} ) }}
-                <div class="uk-form-controls">
+            <div class="uk-form-controls">
                 {{ form_errors(form.message) }}
                 {{ form_widget(form.message) }}
-                 </div>
             </div>
+        </div>
 
-            <div class="form-control">
-                <input type="submit" name="submit"/>
-            </div>
+        <div class="form-control">
+            <input type="submit" name="submit"/>
+        </div>
 
         {#{{ form_end(form) }}#}
 

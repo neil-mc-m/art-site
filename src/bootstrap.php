@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Request;
 $app = new Silex\Application();
 // turn on for developing
-//$app['debug'] = true;
+$app['debug'] = true;
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/../templates'
 ));
@@ -28,6 +28,11 @@ $app->register(new \Art\DbRepoServiceProvider());
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->extend('form.types', function ($types) {
     $types[] = new \Art\ContactType();
+
+    return $types;
+});
+$app->extend('form.types', function ($types) {
+    $types[] = new \Art\UpdateType();
 
     return $types;
 });

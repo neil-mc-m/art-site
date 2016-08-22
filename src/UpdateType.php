@@ -9,8 +9,8 @@
 namespace Art;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -34,6 +34,9 @@ class UpdateType extends AbstractType
                     new Assert\Length(array(
                         'min' => 3
                     ))
+                ),
+                'attr' => array(
+                    'placeholder' => 'e.g. iontas'
                 )
             ))
             ->add('location', TextType::class, array(
@@ -42,6 +45,9 @@ class UpdateType extends AbstractType
                     new Assert\Length(array(
                         'min' => 3
                     ))
+                ),
+                'attr' => array(
+                    'placeholder' => 'the city/town'
                 )
             ))
             ->add('type', TextType::class, array(
@@ -50,12 +56,24 @@ class UpdateType extends AbstractType
                     new Assert\Length(array(
                         'min' => 3
                     ))
-                ))
-            )
-            ->add('date', DateType::class, array(
+                ),
+                'attr' => array(
+                    'placeholder' => 'group, solo etc'
+                )
+            ))
+            ->add('year', IntegerType::class, array(
                 'constraints' => array(
                     new Assert\NotBlank(),
-                    new Assert\Date()
+                    new Assert\Type(array(
+                        'type' => 'integer'
+                    )),
+                    new Assert\Range(array(
+                        'min' => 2000,
+                        'max' => 2040
+                    ))
+                ),
+                'attr' => array(
+                    'placeholder' => 'the year'
                 )
             ));
     }

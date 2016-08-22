@@ -94,5 +94,10 @@ class DbRepo
         
         return $hermit;
     }
+    public function createNewExhibition(array $arr)
+    {
+        $count = $this->conn->insert('exhibition', $arr);
+        return $count;
+    }
 }
 

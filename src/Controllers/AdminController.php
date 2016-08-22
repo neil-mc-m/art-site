@@ -9,6 +9,8 @@ Class AdminController
 {
 
     /**
+     * render the login form. pass errors and last username if there was a failed attempt to login.
+     *
      * @param Request $request
      * @param Application $app
      * @return mixed
@@ -22,26 +24,54 @@ Class AdminController
         $templateName = 'login';
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }
+
     /**
+     * set the user in the session if successfully logged in and render the admin dashboard/homepage.
+     * also gets a list of current exhibitions in the database.
+     *
      * @param Application $app
      * @return mixed
      */
-    public function dashboardAction(Request $request, Application $app)
+    public function dashboardAction(Application $app)
+    {
+        $user = $app['security.token_storage']->getToken()->getUser()->getUsername();
+        $app['session']->set('user', array('username' => $user));
+        $exhibitions = $app['dbrepo']->getAllExhibitions();
+
+        $templateName = 'dashboard';
+        $args_array = array(
+            'user' => $app['session']->get('user'),
+            'exhibitions' => $exhibitions
+        );
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
+    /**
+     * builds a form for creating a new entry on the exhibitions page.
+     * uses a custom form src/UpdateType.php
+     *
+     * @param Application $app
+     * @return mixed
+     */
+    public function createExhibitionAction(Request $request, Application $app)
     {
         $data = array(
             'name' => '',
             'location' => '',
-            'type' => '',
+            'type' => ''
         );
         $form = $app['form.factory']
             ->createBuilder(UpdateType::class, $data)
             ->getForm();
         $form->handleRequest($request);
-        $user = $app['user'];
-        $app['session']->set('user', array('username' => $user));
-        $templateName = 'dashboard';
+        if ($form->isValid()) {
+            $data = $form->getData();
+        }
+        $count = $app['dbrepo']->createNewExhibition($data);
+
+        $templateName = 'createExhibition';
         $args_array = array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'count' => $count
         );
 
         return $app['twig']->render($templateName.'.html.twig', $args_array);

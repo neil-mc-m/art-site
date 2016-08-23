@@ -18,6 +18,7 @@ $app->get('/exhibitions-group', 'Art\\Controllers\\MainController::groupExhibiti
 $app->get('/exhibitions-hermit', 'Art\\Controllers\\MainController::hermitExhibitionAction');
 $app->get('/admin/dashboard', 'Art\\Controllers\\AdminController::dashboardAction');
 $app->match('/admin/create-exhibition', 'Art\\Controllers\\AdminController::createExhibitionAction');
+$app->get('/admin/delete/{id}', 'Art\\Controllers\\AdminController::deleteExhibitionAction');
 $app->get('/admin', 'Art\\Controllers\\AdminController::loginAction');
 $app->get('/login', 'Art\\Controllers\\AdminController::loginAction');
 $app->match('/contact', 'Art\\Controllers\\MainController::contactFormAction');

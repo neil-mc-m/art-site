@@ -99,5 +99,11 @@ class DbRepo
         $count = $this->conn->insert('exhibition', $arr);
         return $count;
     }
+    public function deleteExhibitionById($id)
+    {
+        $count = $this->conn->delete('exhibition', array('id' => $id ));
+        return $count;
+    }
+
 }
 

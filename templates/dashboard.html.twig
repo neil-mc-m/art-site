@@ -25,11 +25,10 @@
             <td>{{ ex.year }}</td>
             <td>{{ ex.type }}</td>
             <td>{{ ex.location }}</td>
-            <td><a class="uk-button uk-button-primary" href="#"><i class="uk-icon-cogs"></i> edit</a></td>
-            <td><a class="uk-button uk-button-danger" href="#"><i class="uk-icon-close"></i> delete</a></td>
+            <td><a class="uk-button uk-button-danger" href="/admin/delete/{{ ex.id }}"><i class="uk-icon-close"></i> delete</a></td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
-
+</div>
 {% endblock %}

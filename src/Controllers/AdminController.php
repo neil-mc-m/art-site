@@ -54,6 +54,7 @@ Class AdminController
      */
     public function createExhibitionAction(Request $request, Application $app)
     {
+        $count = 0;
         $data = array(
             'name' => '',
             'location' => '',
@@ -65,8 +66,9 @@ Class AdminController
         $form->handleRequest($request);
         if ($form->isValid()) {
             $data = $form->getData();
+            $count = $app['dbrepo']->createNewExhibition($data);
         }
-        $count = $app['dbrepo']->createNewExhibition($data);
+
 
         $templateName = 'createExhibition';
         $args_array = array(
@@ -74,6 +76,19 @@ Class AdminController
             'count' => $count
         );
 
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
+    }
+
+    public function deleteExhibitionAction(Application $app, $id)
+    {
+        $count = $app['dbrepo']->deleteExhibitionById($id);
+        $exhibitions = $app['dbrepo']->getAllExhibitions();
+        $templateName = 'dashboard';
+
+        $args_array = array(
+            'count' => $count,
+            'exhibitions' => $exhibitions
+        );
         return $app['twig']->render($templateName.'.html.twig', $args_array);
     }
 }

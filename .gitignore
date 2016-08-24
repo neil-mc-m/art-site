@@ -4,3 +4,4 @@ composer.lock
 .idea
 public/node_modules/
 config/
+cache/

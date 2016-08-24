@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<div class="uk-block-muted uk-block-large">
+<div class="uk-block-muted uk-block-large uk-margin-large-left uk-margin-large-right">
     <p class="uk-text-center">Welcome, {{ app.user.username }}</p>
     <ul class="uk-flex-center uk-subnav">
         <li><a class="uk-button uk-button-success" href="{{ path('admin_logout') }}"><i class="uk-icon-home"></i> Logout</a></li>
         <li><a class="uk-button uk-button-primary" href="/admin/create-exhibition"><i class="uk-icon-cogs"></i> Create a new entry</a></li>
     </ul>
-
+<div class="uk-overflow-container">
     <table class="uk-table uk-table-condensed">
         <caption>Exhibition List</caption>
         <thead>
@@ -30,5 +30,6 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 </div>
 {% endblock %}

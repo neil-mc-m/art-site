@@ -4,16 +4,21 @@
     <div class="form">
     <form class="uk-form" action="{{ path('admin_login_check') }}" method="post">
         {{ error }}
-        <div class="uk-form-row">
+        <div class="uk-form-row uk-margin">
             <input type="text" name="_username" value="{{ last_username }}" placeholder="username" />
         </div>
         <div class="uk-form-row">
             <input type="password" name="_password" value="" placeholder="password" />
         </div>
         <input type="hidden" name="_target_path" value="/admin/dashboard"/>
-        <div class="uk-form-row">
-            <input type="submit" />
+        <div class="uk-form-row uk-margin">
+            <input class="uk-button uk-button-primary" type="submit" value="log-in" />
+        </div>
+        <div class="uk-flex uk-flex-center">
+            <a href="/" class="uk-button uk-button-success">Cancel</a>
         </div>
     </form>
+
+
     </div>
 {% endblock %}

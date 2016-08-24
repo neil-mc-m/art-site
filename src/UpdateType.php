@@ -47,7 +47,7 @@ class UpdateType extends AbstractType
                     ))
                 ),
                 'attr' => array(
-                    'placeholder' => 'the city/town'
+                    'placeholder' => 'the gallery and city/town'
                 )
             ))
             ->add('type', TextType::class, array(

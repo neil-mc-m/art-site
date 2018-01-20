@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The official website for the visual artist, Dave Gearty, a sligo based artist.">
+    <meta name="description"
+          content="The official website for the visual artist, Dave Gearty, a sligo based artist.">
     <meta name="author" content="web dev by neil mcmahon.">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="google-site-verification" content="LaLOM8iSjGdwZbZhOoppL9Ds_ZLGcWDHKMNlVJnc1Vk" />
+    <meta name="google-site-verification" content="LaLOM8iSjGdwZbZhOoppL9Ds_ZLGcWDHKMNlVJnc1Vk"/>
 
     <title>{% block title %}Dave Gearty | Artist{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ asset('/css/uikit.min.css') }}">
+    <!-- UIkit 3 CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css"/>
+
     {# switch to this file while developing. #}
-    {#<link rel="stylesheet" href="{{ asset('/css/main.css') }}">#}
-    <link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    {#<link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">#}
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="/favicon.ico">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('/js/uikit.min.js') }}"></script>
+    <!-- UIkit 3 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
 </head>
 <body class="site">
+<div class="uk-offcanvas-content">
+
     <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+            href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <main class="site-content">
-        <div class="main-heading uk-flex uk-flex-center">
-            <a href="/" class="uk-navbar-brand">Dave Ge<span class="art">art</span>y</a>
-        </div>
-        <div class="uk-flex uk-flex-center">
-            <p class="uk-text-muted">Visual Artist</p>
-        </div>
+
 
         {% block nav %}
         {% endblock %}
@@ -44,13 +50,16 @@
     <footer class="site-footer">
 
         <div class="uk-text-center">
-            <a href="/login" class="uk-icon-hover"><i class="uk-icon-cog"></i></a>
+            <a href="/login"><span uk-icon="icon:cog"></span></a>
             <p>&copy;2016 www.davegeartyart.info</p>
-            <p class="uk-text-muted uk-text-small">web development by <a class="art" href="http://www.sitelab.info/">neil.</a></p>
+            <p class="uk-text-muted uk-text-small">web development by <a class="art"
+                                                                         href="http://www.sitelab.info/">neil.</a>
+            </p>
         </div>
     </footer>
     {# javascript functions #}
     {% block javascript %}
     {% endblock %}
+</div>
 </body>
 </html>

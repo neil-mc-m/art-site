@@ -2,27 +2,22 @@
 {% set navbar = [['home', 'Home'], ['art', 'Art-Work'], ['exhibitions', 'Exhibitions'], ['contact', 'Contact']] %}
 
 <nav>
-    <div class="uk-container">
-        <a href="#my-id" class="uk-navbar-toggle uk-visible-small uk-flex uk-flex-center" data-uk-offcanvas></a>
-        <ul class="uk-container navbar uk-hidden-small">
-            {% for item in navbar %}
-                <li{% if item[0] == active_page %} class="active uk-animation-hover"{% endif %} class="uk-animation-hover"><a
-                            href="{{ global.request.basepath }}/{{ (item[0]) }}" class="main-link">{{ item[1] }}</a></li>
-            {% endfor %}
-        </ul>
+    <div class="uk-navbar uk-navbar-container uk-margin">
+        <a href="/" class="uk-navbar-item uk-navbar-logo">Dave Gearty</a>
+        <div class="uk-navbar-right">
+            <a href="#offCanvasNav" class="uk-navbar-item" uk-toggle>
+                <span uk-navbar-toggle-icon></span>
+            </a>
+        </div>
     </div>
 </nav>
-<hr>
-<div id="my-id" class="uk-offcanvas">
+
+<div id="offCanvasNav" uk-offcanvas="overlay: true; mode: push">
     <div class="uk-offcanvas-bar">
-        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+        <ul class="uk-nav uk-nav-default">
             {% for item in navbar %}
                 <li><a href="{{ global.request.basepath }}/{{ (item[0]) }}" class="main-link">{{ item[1] }}</a></li>
             {% endfor %}
-            {#<li><a href="/">Home</a></li>#}
-            {#<li><a href="/art">Art</a></li>#}
-            {#<li><a href="/exhibitions">Exhibitions</a></li>#}
-            {#<li><a href="/contact">Contact</a></li>#}
         </ul>
     </div>
 </div>

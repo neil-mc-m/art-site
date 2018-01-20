@@ -44,10 +44,10 @@ footer{
     color: #34495E;
 }
 
-.uk-navbar-brand {
+.uk-navbar-logo {
     /*font-family: 'Candal', sans-serif;*/
     color: #34495E;
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 a.foot-nav  {
     color: white;
@@ -92,29 +92,31 @@ li.active {
     padding: 3px 3px;
 }
 
-.uk-margin {
-    background-color: rgba(156, 148, 140, 0.08);
-}
+/*.uk-margin {*/
+    /*background-color: rgba(156, 148, 140, 0.08);*/
+/*}*/
 
-.navbar {
-    display: flex;
-    flex: 1;
-    list-style-type: none;
-    justify-content: center;
-}
+/*.navbar {*/
+    /*display: flex;*/
+    /*flex: 1;*/
+    /*list-style-type: none;*/
+    /*justify-content: center;*/
+/*}*/
 
-.navbar li{
-    margin-right: 1%;
-}
+/*.navbar li{*/
+    /*margin-right: 1%;*/
+/*}*/
 
-.uk-navbar-toggle {
-    float: none;
-}
+/*.uk-navbar-toggle {*/
+    /*float: none;*/
+/*}*/
 
-.uk-offcanvas-bar {
-    max-width: 50%;
+/*.uk-offcanvas-bar {*/
+    /*max-width: 50%;*/
+/*}*/
+nav > .uk-navbar-container {
+    background-color: #00a8e6;
 }
-
 .uk-thumbnail {
     height: 300px;
 }
@@ -154,8 +156,8 @@ input {
         column-fill: balance;
     }
 
-    .uk-navbar-brand {
-        font-size: 3.5em;
+    .uk-navbar-logo {
+        font-size: 2.5em;
     }
 
     .uk-thumbnail {

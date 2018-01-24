@@ -44,7 +44,7 @@ class MainController
             'images' => $img
         );
         $response = new Response($app['twig']->render($templateName.'.html.twig', $args_array));
-        $response->setSharedMaxAge(3600);
+//        $response->setSharedMaxAge(3600);
         
         return $response;
     }

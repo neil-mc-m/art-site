@@ -22,5 +22,5 @@ $app->get('/admin/delete/{id}', 'Art\\Controllers\\AdminController::deleteExhibi
 $app->get('/admin', 'Art\\Controllers\\AdminController::loginAction');
 $app->get('/login', 'Art\\Controllers\\AdminController::loginAction');
 $app->match('/contact', 'Art\\Controllers\\MainController::contactFormAction');
-
-$app['http_cache']->run();
+$app->run();
+//$app['http_cache']->run();

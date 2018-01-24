@@ -1,21 +1,30 @@
 <div id="view" class="column">
     {% for image in images %}
-        <div class="item uk-text-center">
-            <figure class="uk-overlay">
-            <a class="main-link" href="#modal{{ image.id }}" data-uk-modal>
-                <img class="img" data-uk-scrollspy="{cls:'uk-animation-fade', delay:200}" src="{{ asset(image.path, 'images') }}" alt="{{ image.name }} pic">
-                <figcaption>
-                    {{ image.name }}
-                </figcaption></a>
-                </figure>
-        </div>
-        <div id="modal{{ image.id }}" class="uk-modal">
-            <div class="uk-modal-dialog">
-                <a class="uk-modal-close uk-close"></a>
-                <strong>Name:</strong> {{ image.name|capitalize }}<br>
-                <strong>Medium</strong>: {{ image.medium|capitalize }}<br>
-                <strong>Dimensions</strong>: {{ image.height }}<span class="uk-text-muted">h</span> x {{ image.width }}<span class="uk-text-muted">w</span> inches
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <img src="{{ image.path }}" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">{{ image.name }}</h3>
+                <p>{{ image.medium }}</p>
             </div>
         </div>
+        {#<div class="item uk-text-center">#}
+            {#<figure class="uk-inline-clip">#}
+            {#<a class="main-link" href="#modal{{ image.id }}" data-uk-modal>#}
+                {#<img class="img" src="{{ image.path }}" alt="{{ image.name }} pic">#}
+                {#<figcaption>#}
+                    {#{{ image.name }}#}
+                {#</figcaption></a>#}
+                {#</figure>#}
+        {#</div>#}
+        {#<div id="modal{{ image.id }}" class="uk-modal">#}
+            {#<div class="uk-modal-dialog">#}
+                {#<a class="uk-modal-close-default" uk-close></a>#}
+                {#<strong>Name:</strong> {{ image.name|capitalize }}<br>#}
+                {#<strong>Medium</strong>: {{ image.medium|capitalize }}<br>#}
+                {#<strong>Dimensions</strong>: {{ image.height }}<span class="uk-text-muted">h</span> x {{ image.width }}<span class="uk-text-muted">w</span> inches#}
+            {#</div>#}
+        {#</div>#}
     {% endfor %}
 </div>

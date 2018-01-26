@@ -1,16 +1,16 @@
 {# the main navbar #}
 {% set navbar = [['home', 'Home'], ['art', 'Art-Work'], ['exhibitions', 'Exhibitions'], ['contact', 'Contact']] %}
 
-<nav>
-    <div class="uk-navbar uk-navbar-container uk-margin">
+<nav class="uk-navbar-container uk-transparent uk-dark" uk-navbar>
+
         <a href="/" class="uk-navbar-item uk-navbar-logo">Dave Gearty</a>
-        <div class="uk-navbar-right">
+    <div class="uk-navbar-right">
             <a href="#offCanvasNav" class="uk-navbar-item" uk-toggle>
                 <span uk-navbar-toggle-icon></span>
                 <div id="offCanvasNav" uk-offcanvas="overlay: true; mode: push">
                     <div class="uk-offcanvas-bar">
                         <h3>Dave Gearty Art</h3>
-                        <ul class="uk-nav uk-nav-default">
+                        <ul class="uk-nav">
                             {% for item in navbar %}
                                 <li><a href="{{ global.request.basepath }}/{{ (item[0]) }}" class="main-link">{{ item[1] }}</a></li>
                             {% endfor %}
@@ -19,7 +19,7 @@
                 </div>
             </a>
         </div>
-    </div>
+
 </nav>
 
 

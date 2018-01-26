@@ -17,10 +17,11 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css"/>
 
     {# switch to this file while developing. #}
-    {#<link rel="stylesheet" href="{{ asset('/css/main.css') }}">#}
-    <link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+    {#<link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">#}
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    {#<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>#}
     <link rel="icon" type="image/png" href="/favicon.ico">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -51,9 +52,15 @@
 
         <div class="uk-text-center">
             <a href="/login"><span uk-icon="icon:cog"></span></a>
-            <p>&copy;2016 www.davegeartyart.info</p>
-            <p class="uk-text-muted uk-text-small">web development by <a class="art"
-                                                                         href="http://www.sitelab.info/">neil.</a>
+            <p>
+                &copy; {{ "now"|date('Y', timezone="Europe/Dublin") }}
+                Have a nice {{ "now"|date('l') }}
+            </p>
+            <p>
+                www.davegeartyart.info
+            </p>
+            <p class="uk-text-muted uk-text-small">
+                $this->webDevelopment<a class="art" href="http://solidsites.ie">("SolidSites")</a>
             </p>
         </div>
     </footer>

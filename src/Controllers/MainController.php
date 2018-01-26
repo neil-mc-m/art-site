@@ -43,10 +43,10 @@ class MainController
         $args_array = array(
             'images' => $img
         );
-        $response = new Response($app['twig']->render($templateName.'.html.twig', $args_array));
+        return $app['twig']->render($templateName.'.html.twig', $args_array);
 //        $response->setSharedMaxAge(3600);
         
-        return $response;
+
     }
 
     /**

@@ -2,30 +2,28 @@
 {% set navbar = [['home', 'Home'], ['art', 'Art-Work'], ['exhibitions', 'Exhibitions'], ['contact', 'Contact']] %}
 
 <nav class="uk-navbar-container uk-transparent uk-dark" uk-navbar>
-    <div class="uk-navbar-center">
-        <div class="uk-navbar-center-left"></div>
+
+
         <a href="/" class="uk-navbar-item uk-navbar-logo">Dave Gearty</a>
-        <div class="uk-navbar-center-right"></div>
-            <a href="#offCanvasNav" class="uk-navbar-item" uk-toggle>
-                <span uk-navbar-toggle-icon></span>
-                <div id="offCanvasNav" uk-offcanvas="overlay: true; mode: fade">
-
-                    <div class="uk-offcanvas-bar">
-                        <h3>Dave Gearty</h3>
-                        <button class="uk-close-large uk-position-small uk-position-top-right"
-                                type="button" uk-close></button>
-                        <ul class="uk-nav">
-                            {% for item in navbar %}
-                                <li><a href="{{ global.request.basepath }}/{{ (item[0]) }}" class="main-link">{{ item[1] }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </a>
+    <div class="uk-navbar-right">
+        <a href="#offCanvasNav" class="uk-navbar-item" uk-toggle>
+            <span uk-navbar-toggle-icon></span>
         </div>
+            <div id="offCanvasNav" uk-offcanvas="overlay: true; mode:push">
 
-
-    </div>
+                <div class="uk-offcanvas-bar">
+                    <h3>Dave Gearty</h3>
+                    <button class="uk-close-large uk-position-small uk-position-top-right"
+                            type="button" uk-close></button>
+                    <ul class="uk-nav">
+                        {% for item in navbar %}
+                            <li><a href="{{ global.request.basepath }}/{{ (item[0]) }}"
+                                   class="main-link">{{ item[1] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </a>
 
 </nav>
 

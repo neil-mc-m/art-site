@@ -3,14 +3,6 @@ html {
     /*font-family: 'Lato', sans-serif;*/
     font-family: 'Raleway', sans-serif;
 }
- /*a.main-link {*/
-     /*color: #1a1a1a;*/
-     /*!*font-family: 'Candal', sans-serif;*!*/
-/*}*/
-
-/*.alt-link {*/
-    /*font-family: 'Lato', sans-serif;*/
-/*}*/
 
 footer{
     color: white;
@@ -93,31 +85,6 @@ li.active {
     padding: 3px 3px;
 }
 
-/*.uk-margin {*/
-    /*background-color: rgba(156, 148, 140, 0.08);*/
-/*}*/
-
-/*.navbar {*/
-    /*display: flex;*/
-    /*flex: 1;*/
-    /*list-style-type: none;*/
-    /*justify-content: center;*/
-/*}*/
-
-/*.navbar li{*/
-    /*margin-right: 1%;*/
-/*}*/
-
-/*.uk-navbar-toggle {*/
-    /*float: none;*/
-/*}*/
-
-/*.uk-offcanvas-bar {*/
-    /*max-width: 50%;*/
-/*}*/
-nav > .uk-navbar-container {
-    background-color: #00a8e6;
-}
 .uk-thumbnail {
     height: 300px;
 }
@@ -125,14 +92,7 @@ nav > .uk-navbar-container {
 .form-control {
     padding: 2%;
 }
-/*.uk-grid {*/
 
-    /*margin-bottom: 4%;*/
-/*}*/
-/*.column {*/
-    /*column-count: 1;*/
-    /*margin: 0.5%;*/
-/*}*/
 .column {
     column-count: 2;
 }
@@ -163,9 +123,18 @@ input {
 
 .uk-navbar-item {
     font-family: 'Raleway', sans-serif;
+    color: white;
 }
 .uk-close-large {
     color: white;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+     background: #34495E;
+}
+
+.uk-offcanvas-bar {
+    background-color: #34495E;
 }
 @media (min-width: 600px) {
     .column {
@@ -177,9 +146,6 @@ input {
         font-size: 2.5em;
     }
 
-    /*.uk-thumbnail {*/
-        /*height: 500px;*/
-    /*}*/
     input {
         width: 100%;
     }

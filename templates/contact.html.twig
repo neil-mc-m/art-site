@@ -17,32 +17,32 @@
         <p class="uk-medium-width-1-2 uk-text-center">Fill in your details and your message and ill get back to you as soon as possible.</p>
 
     <div class="form">
-        <form class="uk-form uk-form-horizontal" action="/contact" method="post">
+        <form action="/contact" method="post">
 
             {#{{ form_start(form) }}#}
         {{ form_errors(form) }}
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             {{ form_label(form.name, 'Name:', { 'label_attr': {'class': 'uk-form-label'} }) }}
             <div class="uk-form-controls">
-                {{ form_widget(form.name) }}
                 {{ form_errors(form.name) }}
+                {{ form_widget(form.name, {'attr': {'class': 'uk-input'}}) }}
             </div>
         </div>
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             {{ form_label(form.email, 'Email:', { 'label_attr': {'class': 'uk-form-label'} }) }}
             <div class="uk-form-controls">
                 {{ form_errors(form.email) }}
-                {{ form_widget(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'uk-input'}}) }}
             </div>
         </div>
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             {{ form_label(form.message, 'Message:', { 'label_attr': {'class': 'uk-form-label'}} ) }}
             <div class="uk-form-controls">
                 {{ form_errors(form.message) }}
-                {{ form_widget(form.message) }}
+                {{ form_widget(form.message, {'attr': {'class': 'uk-textarea'}}) }}
             </div>
         </div>
 

@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-          content="The official website for the visual artist, Dave Gearty, a sligo based artist.">
+          content="{%  block description %}{% endblock %}">
     <meta name="author" content="web dev by neil mcmahon.">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="google-site-verification" content="LaLOM8iSjGdwZbZhOoppL9Ds_ZLGcWDHKMNlVJnc1Vk"/>
     <meta name="theme-color" content="#34495E">
-    <title>{% block title %}Dave Gearty | Artist{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="{{ asset('/css/uikit.min.css') }}">
     <!-- UIkit 3 CSS -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css"/>
@@ -21,14 +20,9 @@
     {#<link rel="stylesheet" href="{{ asset('/css/prefix-main.css', 'css') }}">#}
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    {#<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>#}
     <link rel="icon" type="image/png" href="/favicon.ico">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="{{ asset('/js/uikit.min.js') }}"></script>
-    <!-- UIkit 3 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+
 </head>
 <body class="site">
 <div class="uk-offcanvas-content">
@@ -51,22 +45,28 @@
     <footer class="site-footer">
 
         <div class="uk-text-center">
-            <a href="/login"><span uk-icon="icon:cog"></span></a>
+            <p>
+                www.davegeartyart.info
+            </p>
+
+            <p class="uk-text-muted uk-text-small">
+                $this->webDevelopment<a class="art" href="http://solidsites.ie">("SolidSites")</a>
+            </p>
             <p>
                 &copy; {{ "now"|date('Y', timezone="Europe/Dublin") }}
                 Have a nice {{ "now"|date('l') }}
             </p>
-            <p>
-                www.davegeartyart.info
-            </p>
-            <p class="uk-text-muted uk-text-small">
-                $this->webDevelopment<a class="art" href="http://solidsites.ie">("SolidSites")</a>
-            </p>
+            <a class="uk-link-muted" href="/login"><span uk-icon="icon:cog"></span></a>
         </div>
     </footer>
     {# javascript functions #}
-    {% block javascript %}
-    {% endblock %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <!-- UIkit 3 JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+
 </div>
 </body>
 </html>

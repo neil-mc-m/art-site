@@ -136,6 +136,10 @@ input {
 .uk-offcanvas-bar {
     background-color: #34495E;
 }
+
+.uk-card-default {
+    box-shadow: none;
+}
 @media (min-width: 600px) {
     .column {
         column-count: 4;

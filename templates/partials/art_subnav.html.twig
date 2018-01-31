@@ -1,9 +1,7 @@
 
-{% set subnav = [['art', 'All'], ['art-collage', 'Collage'], ['art-oil', 'Oil on Canvas']] %}
+{% set subnav = [['art', 'All'], ['art/collage', 'Collage'], ['art/oil', 'Oil on Canvas']] %}
 <ul class="uk-flex-center uk-subnav uk-subnav-pill">
-    {#<li class="active"><a href="/art">All</a></li>#}
-    {#<li><a href="/art-collage">Collage</a></li>#}
-    {#<li><a href="/art-oil">Oil on canvas</a></li>#}
+
     {% for item in subnav %}
         <li {% if item[0] == active_tab %}class="active"{% endif %}><a href="{{ global.request.basepath }}/{{ item[0] }}" class="main-link">{{ item[1] }}</a></li>
     {% endfor %}

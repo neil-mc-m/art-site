@@ -16,7 +16,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.named_packages' => array(
         'js'     => array('version' => 'uikitJS', 'base_path' => '/js'),
-        'css'    => array('version' => 'css', 'base_path' => '/build'),
+        'css'    => array('version' => '2', 'base_path' => '/build'),
         'images' => array('version' => 'optimised', 'base_path' => '/build')
     )
 ));

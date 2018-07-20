@@ -3,9 +3,16 @@
 
 <nav class="uk-navbar-container uk-transparent uk-dark" uk-navbar>
     <a href="/" class="uk-navbar-item uk-navbar-logo">Dave Gearty</a>
-    <div class="uk-navbar-right">
+    <ul class="uk-nav uk-visible@m">
+        {% for item in navbar %}
+            <li><a href="{{ global.request.basepath }}/{{ (item[0]) }}">{{ item[1] }}</a></li>
+        {% endfor %}
+    </ul>
+    <div class="uk-navbar-right uk-hidden@s">
         <a href="#offCanvasNav" class="uk-navbar-item" uk-toggle>
             <span uk-navbar-toggle-icon></span>
+
+        </a>
         </div>
             <div id="offCanvasNav" uk-offcanvas="overlay: true; mode:push">
 

@@ -1,23 +1,31 @@
 {# the main navbar #}
 {% set navbar = [['home', 'Home'], ['art', 'Art-Work'], ['exhibitions', 'Exhibitions'], ['contact', 'Contact']] %}
 
-<nav class="uk-navbar-container uk-transparent uk-dark" uk-navbar>
-    <a href="/" class="uk-navbar-item uk-navbar-logo">Dave Gearty</a>
-    <ul class="uk-nav uk-visible@m">
-        {% for item in navbar %}
-            <li><a href="{{ global.request.basepath }}/{{ (item[0]) }}">{{ item[1] }}</a></li>
-        {% endfor %}
-    </ul>
+<nav class="uk-navbar-container uk-dark" uk-navbar>
+
+    <div class="uk-navbar-left">
+        <a href="/" class="uk-navbar-item uk-navbar-logo">Dave Gearty</a>
+    </div>
+
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav uk-visible@s">
+            {% for item in navbar %}
+                <li {% if item[0] == active_tab %}class="uk-active"{% endif %}><a href="{{ global
+                    .request.basepath }}/{{ (item[0]) }}">{{ item[1] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
     <div class="uk-navbar-right uk-hidden@s">
         <a href="#offCanvasNav" class="uk-navbar-item" uk-toggle>
             <span uk-navbar-toggle-icon></span>
-
         </a>
         </div>
             <div id="offCanvasNav" uk-offcanvas="overlay: true; mode:push">
 
                 <div class="uk-offcanvas-bar">
-                    <button class="uk-close-large uk-position-small uk-position-top-right"
+                    <button class="uk-offcanvas-close uk-close-large uk-position-small
+                    uk-position-top-right"
                             type="button" uk-close></button>
                     <ul class="uk-nav">
                         {% for item in navbar %}
@@ -27,7 +35,7 @@
                     </ul>
                 </div>
             </div>
-        </a>
+</a>
 </nav>
 
 

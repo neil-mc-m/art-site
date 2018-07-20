@@ -43,10 +43,8 @@ class MainController
         $args_array = array(
             'images' => $img
         );
-        return $app['twig']->render($templateName.'.html.twig', $args_array);
-//        $response->setSharedMaxAge(3600);
-        
 
+        return $app['twig']->render($templateName . '.html.twig', $args_array);
     }
 
     /**
@@ -58,17 +56,20 @@ class MainController
         $img = $app['dbrepo']->getAllCollage();
         $templateName = 'collage';
         $args_array = array(
-            'images' => $img
+            'images' => $img,
+            'bread_crumb' => $templateName
         );
         
-        return $app['twig']->render($templateName.'.html.twig', $args_array);
+        return $app['twig']->render($templateName . '.html.twig', $args_array);
     }
+
     public function oilAction(Application $app)
     {
         $img = $app['dbrepo']->getAllOil();
         $templateName = 'oil';
         $args_array = array(
-            'images' => $img
+            'images' => $img,
+            'bread_crumb' => $templateName
         );
 
         return $app['twig']->render($templateName.'.html.twig', $args_array); 
@@ -83,7 +84,7 @@ class MainController
         $exhib = $app['dbrepo']->getAllExhibitions();
         $templateName = 'exhibition';
         $args_array = array(
-            'exhibitions' => $exhib
+            'exhibitions' => $exhib,
         );
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);
@@ -99,7 +100,8 @@ class MainController
         $solo = $app['dbrepo']->getAllSolo();
         $templateName = 'solo';
         $args_array = array(
-            'solo' => $solo
+            'solo' => $solo,
+            'bread_crumb' => $templateName
         );
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);
@@ -115,7 +117,8 @@ class MainController
         $group  = $app['dbrepo']->getAllGroup();
         $templateName = 'group';
         $args_array = array(
-            'group' => $group
+            'group' => $group,
+            'bread_crumb' => $templateName
         );
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);
@@ -126,7 +129,8 @@ class MainController
         $hermit = $app['dbrepo']->getAllHermit();
         $templateName = 'hermit';
         $args_array = array(
-            'hermit' => $hermit
+            'hermit' => $hermit,
+            'bread_crumb' => $templateName
         );
         
         return $app['twig']->render($templateName.'.html.twig', $args_array);

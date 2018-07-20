@@ -1,4 +1,6 @@
-
 <div class="uk-width-1-1 uk-text-center uk-background-default" uk-sticky>
-    <h1 class="heading">{{ heading|upper }}</h1>
+    <h1 class="heading">{{ heading|upper }}
+        {% if bread_crumb %}
+            / {{ bread_crumb }}
+        {% endif %}</h1>
 </div>

@@ -12,10 +12,9 @@
 
 {% block content %}
     {% include 'partials/heading.html.twig' %}
-    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-        <div class="uk-card-media-left uk-cover-container">
-            <img src="{{ asset('/images/house_party.jpg') }}" alt="random picture" uk-cover>
-            <canvas width="600" height="400"></canvas>
+        <div class="uk-background-cover uk-height-large uk-panel uk-flex uk-flex-center
+        uk-flex-middle" style="background-image: url('images/house_party.jpg');">
+
         </div>
         <div>
             <div class="uk-card-body">
@@ -36,6 +35,6 @@
 
             </div>
         </div>
-    </div>
+    {#</div>#}
 
 {% endblock %}
